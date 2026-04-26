@@ -409,6 +409,7 @@ h3 { font-size: 28px; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  justify-content: center;
 }
 
 @media (max-width: 1024px) {
@@ -420,6 +421,8 @@ h3 { font-size: 28px; }
 @media (max-width: 768px) {
   .products-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
 
@@ -429,17 +432,34 @@ h3 { font-size: 28px; }
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.product-card-image-wrapper {
+  width: 100%;
+  height: 280px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .product-card img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .product-card-content {
@@ -681,6 +701,7 @@ h3 { font-size: 28px; }
   display: flex;
   gap: 16px;
   margin-top: 16px;
+  align-items: center;
 }
 
 .footer-social a {
@@ -698,6 +719,55 @@ h3 { font-size: 28px; }
 
 .footer-social a:hover {
   background-color: var(--accent-red);
+}
+
+.footer-wechat {
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-wechat img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: var(--transition-normal);
+}
+
+.footer-wechat img:hover {
+  transform: scale(1.05);
+  border-color: var(--white);
+}
+
+.footer-wechat span {
+  color: #F8F9FA;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .footer-wechat {
+    margin-left: 0;
+    margin-top: 24px;
+    flex-direction: row;
+    gap: 16px;
+  }
+  
+  .footer-wechat img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-wechat {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footer-bottom {
@@ -1040,10 +1110,11 @@ h3 { font-size: 28px; }
 .mobile-contact-bar .container {
   display: flex;
   justify-content: space-around;
-  gap: 12px;
+  gap: 8px;
 }
 
-.mobile-contact-bar a {
+.mobile-contact-bar a,
+.mobile-contact-bar .wechat-qr-trigger {
   flex: 1;
   text-align: center;
   padding: 12px;
@@ -1054,10 +1125,73 @@ h3 { font-size: 28px; }
   font-weight: 600;
   font-size: 14px;
   transition: var(--transition-fast);
+  cursor: pointer;
+  border: none;
 }
 
-.mobile-contact-bar a:hover {
+.mobile-contact-bar a:hover,
+.mobile-contact-bar .wechat-qr-trigger:hover {
   background-color: #a01830;
+}
+
+/* Mobile WeChat QR Modal */
+.wechat-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.wechat-modal.active {
+  display: flex;
+}
+
+.wechat-modal-content {
+  background-color: var(--white);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 90%;
+  position: relative;
+}
+
+.wechat-modal-content img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.wechat-modal-content h3 {
+  margin-top: 16px;
+  color: var(--primary-blue);
+}
+
+.wechat-modal-content p {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.wechat-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.wechat-modal-close:hover {
+  color: var(--text-dark);
 }
 
 @media (max-width: 768px) {
@@ -1081,6 +1215,76 @@ img[data-src] {
 
 img.loaded {
   opacity: 1;
+}
+
+/* ========================================
+   Catalog Download Section
+   ======================================== */
+
+.catalog-section {
+  padding: 60px 0;
+  background-color: var(--light-gray);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catalog-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.catalog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(10, 46, 92, 0.15);
+}
+
+.catalog-icon {
+  font-size: 64px;
+  margin-bottom: 8px;
+}
+
+.catalog-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--primary-blue);
+  line-height: 1.4;
+}
+
+.catalog-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.catalog-card .btn {
+  width: 100%;
+  margin-top: auto;
 }
 
 /* ========================================
