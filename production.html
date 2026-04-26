@@ -3,9 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KUNDE ELECTRIC production line - Advanced manufacturing facilities, quality control systems, and production capabilities for power fittings.">
-  <meta name="keywords" content="power fittings factory, manufacturing facility, quality control, production line, electrical equipment manufacturing">
-  <title>Production Line | KUNDE ELECTRIC</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Production Line | ISO Certified Power Fittings Factory | KUNDE ELECTRIC</title>
+  <meta name="title" content="Production Line | ISO Certified Power Fittings Factory | KUNDE ELECTRIC">
+  <meta name="description" content="10000+ sqm manufacturing facility with advanced equipment for bimetallic cable lugs, copper aluminum terminals. ISO 9001 certified. Strict quality control from raw material to finished products.">
+  <meta name="keywords" content="power fittings factory China, cable lugs manufacturing, electrical fittings production, ISO 9001 certified factory, Yiwu manufacturing facility, quality control electrical">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.kundeelectric.com/production.html">
+  <meta property="og:title" content="Production Line | ISO Certified Factory">
+  <meta property="og:description" content="10000+ sqm facility with advanced equipment and strict quality control.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.kundeelectric.com/production.html">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,6 +210,10 @@
             <a href="#" aria-label="Facebook">F</a>
             <a href="#" aria-label="Twitter">T</a>
             <a href="#" aria-label="YouTube">Y</a>
+            <div class="footer-wechat">
+              <img src="images/wechat-qr.jpg" alt="WeChat QR Code">
+              <span>Scan to Add WeChat</span>
+            </div>
           </div>
         </div>
       </div>
@@ -204,10 +226,21 @@
   <!-- Mobile Contact Bar -->
   <div class="mobile-contact-bar">
     <div class="container">
+      <button class="wechat-qr-trigger" onclick="document.getElementById('wechatModal').classList.add('active')">WeChat</button>
       <a href="products.html">Products</a>
       <a href="tel:+8613566954989">Call</a>
       <a href="https://wa.me/8613566954989">WhatsApp</a>
       <a href="contact.html">Inquiry</a>
+    </div>
+  </div>
+
+  <!-- WeChat QR Modal -->
+  <div id="wechatModal" class="wechat-modal" onclick="if(event.target === this) this.classList.remove('active')">
+    <div class="wechat-modal-content">
+      <button class="wechat-modal-close" onclick="document.getElementById('wechatModal').classList.remove('active')">&times;</button>
+      <img src="images/wechat-qr.jpg" alt="WeChat QR Code">
+      <h3>Scan to Add WeChat</h3>
+      <p>Or search: +86-13566954989</p>
     </div>
   </div>
 

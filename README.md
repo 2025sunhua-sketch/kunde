@@ -16,10 +16,19 @@ kunde-website/
 │   └── style.css       # 全局样式
 ├── js/
 │   └── main.js         # 交互脚本
-└── images/
-    ├── banner1.jpg     # Banner 图片 1（工厂）
-    ├── banner2.jpg     # Banner 图片 2（团队/产品）
-    └── banner3.jpg     # Banner 图片 3（产品展示）
+└── images/             # 图片文件夹
+    ├── logo.png        # Logo
+    ├── banner1.jpg     # Banner 图片 1
+    ├── banner2.jpg     # Banner 图片 2
+    ├── banner3.jpg     # Banner 图片 3
+    ├── map-location.png # 地图图片
+    ├── products/       # 产品图片（9 张）
+    ├── production/     # 生产线图片（7 张）
+    └── about/          # 公司图片（1 张）
+└── catalogs/           # 产品目录 PDF（3 个）
+    ├── 1 Cable Lugs and Connectors-Kunde Electric.pdf
+    ├── 2 Insulated&Un-insulated Terminals-Kunde Electric.pdf
+    └── 3 Cable Clamps-Kunde Electric.pdf
 ```
 
 ## 🚀 部署到 Vercel
