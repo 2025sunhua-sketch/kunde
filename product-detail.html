@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail | KUNDE ELECTRIC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .product-detail-section { padding: 60px 0; min-height: 80vh; }
+    .product-detail-grid { display: grid; grid-template-columns: 1.2fr 1.5fr; gap: 60px; align-items: start; margin-top: 40px; }
+    @media (min-width: 1200px) { .product-detail-grid { grid-template-columns: 1.2fr 1.6fr; } }
+    @media (max-width: 1024px) { .product-detail-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .product-gallery { position: sticky; top: 100px; }
+    .main-image-container { width: 100%; aspect-ratio: 1; background: #f8f9fa; border-radius: 12px; overflow: hidden; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0; }
+    .main-image-container img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; }
+    .thumbnail-container { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+    @media (max-width: 768px) { .thumbnail-container { grid-template-columns: repeat(4, 1fr); } }
+    .thumbnail { aspect-ratio: 1; background: #f8f9fa; border-radius: 8px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: all 0.3s; }
+    .thumbnail:hover, .thumbnail.active { border-color: var(--primary-blue); transform: translateY(-2px); }
+    .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: 20px 0; display: flex; flex-direction: column; gap: 32px; }
+    .product-title { font-size: 32px; font-weight: 700; color: var(--primary-blue); line-height: 1.3; }
+    .detail-image-container { width: 100%; background: #f8f9fa; border-radius: 12px; overflow: hidden; border: 1px solid #e0e0e0; margin-bottom: 32px; }
+    .detail-image-container img { width: 100%; height: auto; display: block; min-height: 500px; object-fit: contain; }
+    @media (min-width: 1200px) { .detail-image-container img { min-height: 600px; } }
+    .cta-buttons { display: flex; flex-direction: column; gap: 16px; margin-top: auto; }
+    @media (min-width: 768px) { .cta-buttons { flex-direction: row; } }
+    .cta-buttons .btn { width: 100%; text-align: center; padding: 16px 32px; font-size: 16px; }
+    .loading { text-align: center; padding: 60px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header-main">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="KUNDE ELECTRIC"></a>
+      <div class="header-contact">
+        <a href="mailto:kundelec@126.com">kundelec@126.com</a>
+        <a href="tel:+8613566954989">+86-13566954989</a>
+      </div>
+      <button class="mobile-menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="products.html" class="active">PRODUCT</a></li>
+        <li><a href="production.html">PRODUCTION LINE</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Product Detail -->
+  <section class="product-detail-section">
+    <div class="container">
+      <div style="margin-bottom: 32px;">
+        <a href="javascript:history.back()" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+          <span>←</span> Back
+        </a>
+      </div>
+
+      <div id="loading" class="loading">Loading product...</div>
+
+      <div id="productContent" class="product-detail-grid" style="display: none;">
+        <!-- Left: Main Images -->
+        <div class="product-gallery">
+          <div class="main-image-container">
+            <img id="mainImage" src="" alt="Product Image">
+          </div>
+          <div class="thumbnail-container" id="thumbnailContainer"></div>
+        </div>
+
+        <!-- Right: Product Info -->
+        <div class="product-info">
+          <h1 id="productTitle" class="product-title"></h1>
+          
+          <div class="detail-image-container">
+            <img id="detailImage" src="" alt="Product Specifications">
+          </div>
+          
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+            <a href="products.html" class="btn btn-secondary" style="background: var(--primary-blue); color: white;">Browse More Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section"><h4>About Us</h4><p>KUNDE ELECTRIC specializes in R&D, manufacturing and distribution of high-quality power fittings with over 12 years of industry experience.</p></div>
+        <div class="footer-section"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="production.html">Production Line</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="products.html">All Categories</a></li><li><a href="contact.html">Request Quote</a></li></ul></div>
+        <div class="footer-section"><h4>Contact Us</h4><div class="footer-contact-info"><p><strong>Address:</strong> Yiwu Binwang Market A0-033~035</p><p><strong>Tel:</strong> <a href="tel:+8613566954989">+86-13566954989</a></p><p><strong>Email:</strong> <a href="mailto:kundelec@126.com">kundelec@126.com</a></p><p><strong>WhatsApp:</strong> <a href="https://wa.me/8613566954989">+86-13566954989</a></p></div><div class="footer-social"><a href="#">F</a><a href="#">T</a><a href="#">Y</a><div class="footer-wechat"><img src="images/wechat-qr.jpg" alt="WeChat QR Code" style="width: 80px; height: 80px;"></div></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryId = parseInt(urlParams.get('category'));
+    const productFolder = urlParams.get('product');
+
+    // Category folders
+    const categoryFolders = {
+      1: '1Cable Lugs and Connectors',
+      2: '02-2insulated-terminals',
+      3: '03-3cable-clamps'
+    };
+
+    const BASE_PATH = 'images/products/product/';
+
+    // Load product
+    async function loadProduct() {
+      if (!categoryId || !productFolder) {
+        showError('Product not found');
+        return;
+      }
+
+      const categoryFolder = categoryFolders[categoryId];
+      if (!categoryFolder) {
+        showError('Category not found');
+        return;
+      }
+
+      try {
+        // Load product data from JSON
+        const jsonPath = `${BASE_PATH}${categoryFolder}/product-list.json`;
+        const response = await fetch(jsonPath);
+        const products = await response.json();
+
+        const product = products.find(p => p.folder === productFolder);
+        
+        if (!product) {
+          showError('Product not found');
+          return;
+        }
+
+        // Display product
+        displayProduct(product, categoryFolder);
+
+      } catch (error) {
+        console.error('Error loading product:', error);
+        showError('Error loading product');
+      }
+    }
+
+    function displayProduct(product, categoryFolder) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('productContent').style.display = 'grid';
+
+      // Set title
+      document.getElementById('productTitle').textContent = product.name;
+
+      // Load main images
+      if (product.images && product.images.length > 0) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = `${BASE_PATH}${categoryFolder}/${product.folder}/${product.images[0]}`;
+        mainImage.alt = product.name;
+
+        // Load thumbnails
+        const thumbnailContainer = document.getElementById('thumbnailContainer');
+        thumbnailContainer.innerHTML = product.images.map((img, index) => `
+          <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeImage('${BASE_PATH}${categoryFolder}/${product.folder}/${img}', this)">
+            <img src="${BASE_PATH}${categoryFolder}/${product.folder}/${img}" alt="Image ${index + 1}">
+          </div>
+        `).join('');
+      }
+
+      // Load detail image
+      if (product.detailImage) {
+        document.getElementById('detailImage').src = `${BASE_PATH}${categoryFolder}/${product.folder}/${product.detailImage}`;
+      }
+    }
+
+    function showError(message) {
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('loading').textContent = message;
+    }
+
+    function changeImage(imageSrc, thumbnail) {
+      document.getElementById('mainImage').src = imageSrc;
+      document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+      thumbnail.classList.add('active');
+    }
+
+    // Initialize
+    loadProduct();
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
