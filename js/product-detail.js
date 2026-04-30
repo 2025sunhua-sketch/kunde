@@ -1,6 +1,6 @@
 /**
- * Product Detail Page
- * Dynamically load product information and images
+ * Product Detail Page - Updated Version
+ * Load product data from product-list.json
  */
 
 // Configuration
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Load product from URL parameters
-function loadProduct() {
+async function loadProduct() {
   const urlParams = new URLSearchParams(window.location.search);
   const categoryId = parseInt(urlParams.get('category'));
   const productFolder = urlParams.get('product');
   
   if (!categoryId || !productFolder) {
-    showError('Product not found');
+    showError('Product not found - Missing parameters');
     return;
   }
   
@@ -37,156 +37,88 @@ function loadProduct() {
     return;
   }
   
-  // Load product information
-  loadProductInfo(category, productFolder);
-}
-
-// Load product info
-function loadProductInfo(category, productFolder) {
-  const basePath = category.folder + productFolder + '/';
-  
-  // Product title from folder name
-  const productTitle = formatProductName(productFolder);
-  document.getElementById('productTitle').textContent = productTitle;
-  document.getElementById('productCategory').textContent = category.name;
-  
-  // Load images
-  loadProductImages(basePath, productFolder);
-}
-
-// Format product name from folder name
-function formatProductName(folderName) {
-  // Convert "product-001" or "Product_001" to "Product 001"
-  return folderName
-    .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, l => l.toUpperCase());
-}
-
-// Load product images
-async function loadProductImages(basePath, productFolder) {
   try {
-    // Try to load images from folder
-    // Note: This requires server-side directory listing or a product data file
-    // For now, we'll use a predefined list
+    // Load product-list.json
+    const jsonPath = `${category.folder}product-list.json`;
+    const response = await fetch(jsonPath);
     
-    const mainImages = [];
-    let detailImage = null;
-    
-    // Try to find images (1.jpg, 2.jpg, etc. and detail.jpg)
-    // This is a simplified approach - in production, you'd want to scan the folder
-    
-    // Try common image patterns
-    for (let i = 1; i <= 20; i++) {
-      const imagePath = `${basePath}${i}.jpg`;
-      const img = new Image();
-      
-      try {
-        await new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = imagePath;
-        });
-        
-        mainImages.push({
-          src: imagePath,
-          alt: `${productFolder} - Image ${i}`
-        });
-      } catch (e) {
-        // Image doesn't exist, stop looking
-        break;
-      }
-    }
-    
-    // Try to find detail image (non-numeric filename)
-    const possibleDetailNames = ['detail.jpg', 'specification.jpg', 'specs.jpg', 'parameter.jpg'];
-    
-    for (const name of possibleDetailNames) {
-      const imagePath = `${basePath}${name}`;
-      const img = new Image();
-      
-      try {
-        await new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = imagePath;
-        });
-        
-        detailImage = {
-          src: imagePath,
-          alt: `${productFolder} - Specifications`
-        };
-        break;
-      } catch (e) {
-        // Try next name
-        continue;
-      }
-    }
-    
-    if (mainImages.length === 0) {
-      showError('No images found for this product');
+    if (!response.ok) {
+      showError(`Failed to load product data: ${response.status}`);
       return;
     }
     
-    // Display product
-    displayProduct(mainImages, detailImage);
+    const products = await response.json();
+    
+    // Find the product
+    const product = products.find(p => p.folder === productFolder);
+    
+    if (!product) {
+      showError(`Product "${productFolder}" not found in category`);
+      return;
+    }
+    
+    currentProduct = product;
+    displayProduct(product, category);
     
   } catch (error) {
-    console.error('Error loading product images:', error);
-    showError('Error loading product images');
+    console.error('Error loading product:', error);
+    showError('Error loading product: ' + error.message);
   }
 }
 
 // Display product
-function displayProduct(images, detailImage) {
-  currentImages = images;
-  currentDetailImage = detailImage;
+function displayProduct(product, category) {
+  // Hide loading, show content
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('productContent').style.display = 'block';
   
-  // Update image count
-  document.getElementById('imageCount').textContent = images.length + (detailImage ? ' + specs' : '');
+  // Set title
+  document.getElementById('productTitle').textContent = product.name;
   
-  // Display main image
-  const mainImageSrc = document.getElementById('mainImageSrc');
-  mainImageSrc.src = images[0].src;
-  mainImageSrc.alt = images[0].alt;
+  // Set main image
+  if (product.images && product.images.length > 0) {
+    const mainImage = document.getElementById('mainImage');
+    const mainImagePath = `${category.folder}${product.folder}/${product.images[0]}`;
+    mainImage.src = mainImagePath;
+    mainImage.alt = product.name;
+    
+    // Set thumbnails
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    thumbnailContainer.innerHTML = product.images.map((img, index) => `
+      <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeImage('${category.folder}${product.folder}/${img}', this)">
+        <img src="${category.folder}${product.folder}/${img}" alt="Image ${index + 1}" onerror="this.parentElement.style.display='none'">
+      </div>
+    `).join('');
+    
+    currentImages = product.images.map(img => ({
+      src: `${category.folder}${product.folder}/${img}`,
+      alt: `${product.name} - Image`
+    }));
+  }
   
-  // Display thumbnails
-  const thumbnailGrid = document.getElementById('thumbnailGrid');
-  thumbnailGrid.innerHTML = images.map((img, index) => `
-    <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeMainImage(${index})">
-      <img src="${img.src}" alt="${img.alt}">
-    </div>
-  `).join('');
-  
-  // Display detail image
-  if (detailImage) {
-    const detailImageEl = document.getElementById('detailImage');
-    detailImageEl.src = detailImage.src;
-    detailImageEl.alt = detailImage.alt;
+  // Set detail image
+  if (product.detailImage) {
+    const detailImage = document.getElementById('detailImage');
+    detailImage.src = `${category.folder}${product.folder}/${product.detailImage}`;
+    detailImage.alt = `${product.name} - Specifications`;
   }
 }
 
 // Change main image
-function changeMainImage(index) {
-  if (index < 0 || index >= currentImages.length) return;
-  
-  const mainImageSrc = document.getElementById('mainImageSrc');
-  mainImageSrc.src = currentImages[index].src;
-  mainImageSrc.alt = currentImages[index].alt;
-  
-  // Update active thumbnail
-  const thumbnails = document.querySelectorAll('.thumbnail');
-  thumbnails.forEach((thumb, i) => {
-    thumb.classList.toggle('active', i === index);
-  });
+function changeImage(imageSrc, thumbnail) {
+  document.getElementById('mainImage').src = imageSrc;
+  document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+  thumbnail.classList.add('active');
 }
 
 // Show error
 function showError(message) {
-  const title = document.getElementById('productTitle');
-  title.textContent = 'Error';
-  
-  const description = document.querySelector('.product-description');
-  if (description) {
-    description.innerHTML = `<p style="color: var(--accent-red);">${message}</p>`;
-  }
+  document.getElementById('loading').style.display = 'none';
+  const errorDiv = document.createElement('div');
+  errorDiv.style.cssText = 'text-align: center; padding: 60px; color: var(--text-muted); font-size: 18px;';
+  errorDiv.textContent = message;
+  document.querySelector('.product-detail-section .container').appendChild(errorDiv);
 }
+
+// Change image function for inline use
+window.changeImage = changeImage;
