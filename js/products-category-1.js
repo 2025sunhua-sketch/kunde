@@ -4,7 +4,7 @@
 
 const CATEGORY_ID = 1;
 const CATEGORY_NAME = 'Cable Lugs and Connectors';
-const CATEGORY_FOLDER = '1Cable Lugs and Connectors';
+const CATEGORY_FOLDER = '1 Cable Lugs and Connectors';
 const PRODUCTS_PER_PAGE = 12;
 const BASE_PATH = 'images/products/product/';
 

@@ -5,9 +5,9 @@
 
 // Configuration
 const CATEGORIES = {
-  1: { name: 'Cable Lugs and Connectors', folder: 'products/Category-1/' },
-  2: { name: 'Insulated Terminals', folder: 'products/Category-2/' },
-  3: { name: 'Cable Clamps', folder: 'products/Category-3/' }
+  1: { name: 'Cable Lugs and Connectors', folder: 'images/products/product/1 Cable Lugs and Connectors/' },
+  2: { name: 'Insulated Terminals', folder: 'images/products/product/2 Insulated Terminals/' },
+  3: { name: 'Cable Clamps', folder: 'images/products/product/3 Cable Clamps/' }
 };
 
 // State

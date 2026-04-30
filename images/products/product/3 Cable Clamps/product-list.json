@@ -1,0 +1,2260 @@
+﻿[
+    {
+        "folder":  "95A Suspension Clamp",
+        "name":  "95A Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "95B Suspension Clamp",
+        "name":  "95B Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "95C Suspension Clamp",
+        "name":  "95C Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "95D Suspension Clamp",
+        "name":  "95D Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "96A Anchor Clamp Hook",
+        "name":  "96A Anchor Clamp Hook",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "96A_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "96B Anchor Clamp Hook",
+        "name":  "96B Anchor Clamp Hook",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "96B_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "ALPG Aluminum Parallel Groove Clamp",
+        "name":  "ALPG Aluminum Parallel Groove Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "ALPG_01.jpg",
+        "imageCount":  9
+    },
+    {
+        "folder":  "APG-A Aluminum Parallel Groove Clamps",
+        "name":  "APG-A Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_71.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "APG-B Aluminum Parallel Groove Clamps",
+        "name":  "APG-B Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_71.jpg",
+        "imageCount":  9
+    },
+    {
+        "folder":  "APG-C Aluminum Parallel Groove Clamps",
+        "name":  "APG-C Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_71.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "ARC Suspension Clamp",
+        "name":  "ARC Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "ARC_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "AS-H type Aluminium Cable Clamp",
+        "name":  "AS-H type Aluminium Cable Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_66.jpg",
+        "imageCount":  9
+    },
+    {
+        "folder":  "ATL Aluminum Parallel Groove Clamps",
+        "name":  "ATL Aluminum Parallel Groove Clamps",
+        "images":  {
+
+                   },
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_74.jpg",
+        "imageCount":  0
+    },
+    {
+        "folder":  "BCG H Bolted Press Type Cable Connector",
+        "name":  "BCG H Bolted Press Type Cable Connector",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "BCG_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "BIC Suspension Clamp",
+        "name":  "BIC Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "BIC_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "Bi-Metallic Connector-BMC",
+        "name":  "Bi-Metallic Connector-BMC",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.png",
+                       "4.png",
+                       "5.png",
+                       "6.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_75.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "BTL-1 Copper Aluminum Parallel Groove Clamps",
+        "name":  "BTL-1 Copper Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.png",
+                       "10.png"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_74.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "BTL-2 Copper Aluminum Parallel Groove Clamps",
+        "name":  "BTL-2 Copper Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_74.jpg",
+        "imageCount":  8
+    },
+    {
+        "folder":  "BTL-3 Copper Aluminum Parallel Groove Clamps",
+        "name":  "BTL-3 Copper Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_74.jpg",
+        "imageCount":  5
+    },
+    {
+        "folder":  "CAPG-A Copper Aluminum Parallel Groove Clamps",
+        "name":  "CAPG-A Copper Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_72.jpg",
+        "imageCount":  8
+    },
+    {
+        "folder":  "CAPG-B Copper Aluminum Parallel Groove Clamps",
+        "name":  "CAPG-B Copper Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_72.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CAPG-C Copper Aluminum Parallel Groove Clamps",
+        "name":  "CAPG-C Copper Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_72.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CASU-1 Insulation Strain Clamp",
+        "name":  "CASU-1 Insulation Strain Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "CASU_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CASU-2 Insulation Strain Clamp",
+        "name":  "CASU-2 Insulation Strain Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "CASU_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CASU-3 Insulation Strain Clamp",
+        "name":  "CASU-3 Insulation Strain Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "CASU_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "CCT Copper Cable Clamps",
+        "name":  "CCT Copper Cable Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.png",
+                       "3.png",
+                       "4.png",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.JPG",
+                       "8.JPG",
+                       "9.JPG",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_64.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "CMC Multifit Cable Connector s",
+        "name":  "CMC Multifit Cable Connector s",
+        "images":  [
+                       "1.jpg",
+                       "2.JPG",
+                       "3.jpg",
+                       "4.JPG",
+                       "5.JPG",
+                       "6.JPG",
+                       "7.JPG",
+                       "8.JPG",
+                       "9.JPG",
+                       "10.JPG"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_65.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "CPB Insulation Piercing Clamp",
+        "name":  "CPB Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "CPB_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "CPC-1 Insulation Piercing Clamp",
+        "name":  "CPC-1 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "CPC_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CPC-2 Insulation Piercing Clamp",
+        "name":  "CPC-2 Insulation Piercing Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "CPC_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CPC-3 Insulation Piercing Clamp",
+        "name":  "CPC-3 Insulation Piercing Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "CPC_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "CS-10 Anchor Clamp Hook",
+        "name":  "CS-10 Anchor Clamp Hook",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "CS-10_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "CS-1200 Anchor Clamp Hook",
+        "name":  "CS-1200 Anchor Clamp Hook",
+        "images":  "1.jpg",
+        "detailImage":  "CS-1200_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CS-1300 Anchor Clamp Hook",
+        "name":  "CS-1300 Anchor Clamp Hook",
+        "images":  "1.jpg",
+        "detailImage":  "CS-1300_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CS-1500 Anchor Clamp Hook",
+        "name":  "CS-1500 Anchor Clamp Hook",
+        "images":  "1.jpg",
+        "detailImage":  "CS-1500_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CS-1500A Anchor Clamp Hook",
+        "name":  "CS-1500A Anchor Clamp Hook",
+        "images":  "1.jpg",
+        "detailImage":  "CS1500A_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CS-1500D Anchor Clamp Hook",
+        "name":  "CS-1500D Anchor Clamp Hook",
+        "images":  {
+
+                   },
+        "detailImage":  "CS1500D_01.png",
+        "imageCount":  0
+    },
+    {
+        "folder":  "CSX1 Anchor Clamp Hook",
+        "name":  "CSX1 Anchor Clamp Hook",
+        "images":  "1.jpg",
+        "detailImage":  "CSX1_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CT-1 Insulation Piercing Clamp",
+        "name":  "CT-1 Insulation Piercing Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "CT_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CT-150 Insulation Piercing Connector",
+        "name":  "CT-150 Insulation Piercing Connector",
+        "images":  "1.jpg",
+        "detailImage":  "CT_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CT-2 Insulation Piercing Clamp",
+        "name":  "CT-2 Insulation Piercing Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "CT_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CT-295 Insulation Piercing Connector",
+        "name":  "CT-295 Insulation Piercing Connector",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "CT_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "CT-3 Insulation Piercing Clamp",
+        "name":  "CT-3 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "CT_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "CT-395 Insulation Piercing Connector",
+        "name":  "CT-395 Insulation Piercing Connector",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "CT_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "CT-4 Insulation Piercing Clamp",
+        "name":  "CT-4 Insulation Piercing Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "CT_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "CT-5 Insulation Piercing Clamp",
+        "name":  "CT-5 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "CT_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "CT-70 Insulation Piercing Connector",
+        "name":  "CT-70 Insulation Piercing Connector",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "CT_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "CUPG-A Copper Parallel Groove Clamps",
+        "name":  "CUPG-A Copper Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_73.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "CUPG-B Copper Parallel Groove Clamps",
+        "name":  "CUPG-B Copper Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_73.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "CWJC Wide Jaw Connectors",
+        "name":  "CWJC Wide Jaw Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.JPG",
+                       "4.JPG",
+                       "5.JPG",
+                       "6.JPG",
+                       "7.JPG",
+                       "8.JPG",
+                       "9.JPG",
+                       "10.JPG"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_65.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "DCNK Insulation Piercing Clamp",
+        "name":  "DCNK Insulation Piercing Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "DCNK_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DCNL Insulation Piercing Clamp",
+        "name":  "DCNL Insulation Piercing Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "DCNL_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DN1 Anchor Clamp",
+        "name":  "DN1 Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PA_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DN123 Anchor Clamp",
+        "name":  "DN123 Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PA_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DN414 Anchor Clamp",
+        "name":  "DN414 Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PA_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DS Suspension Clamp",
+        "name":  "DS Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "DS_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DS-10 Anchor Clamp Hook",
+        "name":  "DS-10 Anchor Clamp Hook",
+        "images":  "1.jpg",
+        "detailImage":  "DS10_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "DS-20 Anchor Clamp Hook",
+        "name":  "DS-20 Anchor Clamp Hook",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "DS20_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "DZ3 Insulation Piercing Clamp",
+        "name":  "DZ3 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "DZ3_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "ES-14 Suspension Set",
+        "name":  "ES-14 Suspension Set",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "ES-14 ES-15_01.png",
+        "imageCount":  7
+    },
+    {
+        "folder":  "ES-15 Suspension Set",
+        "name":  "ES-15 Suspension Set",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "ES-14 ES-15_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "G-CPD150 Insulation Piercing Clamps",
+        "name":  "G-CPD150 Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "G-CPD150双节绝缘穿刺线夹G-CPD150 Insulation Piercing Clamps_01.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "HD-1 Wall Fitting For Self Support Insulated Wire",
+        "name":  "HD-1 Wall Fitting For Self Support Insulated Wire",
+        "images":  "1.jpg",
+        "detailImage":  "HD_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "HD-2 Wall Fitting For Self Support Insulated Wire",
+        "name":  "HD-2 Wall Fitting For Self Support Insulated Wire",
+        "images":  "1.jpg",
+        "detailImage":  "HD_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "HD-5 Wall Fitting For Self Support Insulated Wire",
+        "name":  "HD-5 Wall Fitting For Self Support Insulated Wire",
+        "images":  "1.jpg",
+        "detailImage":  "HD_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "HD-6 Wall Fitting For Self Support Insulated Wire",
+        "name":  "HD-6 Wall Fitting For Self Support Insulated Wire",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "HD_01.png",
+        "imageCount":  7
+    },
+    {
+        "folder":  "HTO Aluminum Cable Connectors",
+        "name":  "HTO Aluminum Cable Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_67.jpg",
+        "imageCount":  4
+    },
+    {
+        "folder":  "IPC3.1 Insulation Piercing Connectors",
+        "name":  "IPC3.1 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "IPC DES_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "IPC3.2 Insulation Piercing Connectors",
+        "name":  "IPC3.2 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "IPC DES_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "IPC3.3 Insulation Piercing Connectors",
+        "name":  "IPC3.3 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "IPC DES_01.png",
+        "imageCount":  7
+    },
+    {
+        "folder":  "IPC3.4 Insulation Piercing Connectors",
+        "name":  "IPC3.4 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "IPC DES_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "JB Aluminum Parallel Groove Clamps",
+        "name":  "JB Aluminum Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "JB DES_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "JBC-0 Insulation Piercing Connectors",
+        "name":  "JBC-0 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "JBC_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "JBC-1 Insulation Piercing Connectors",
+        "name":  "JBC-1 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "JBC_01.png",
+        "imageCount":  9
+    },
+    {
+        "folder":  "JBC-2 Insulation Piercing Connectors",
+        "name":  "JBC-2 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "JBC_01.png",
+        "imageCount":  9
+    },
+    {
+        "folder":  "JBC-3 Insulation Piercing Connectors",
+        "name":  "JBC-3 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "JBC_01.png",
+        "imageCount":  7
+    },
+    {
+        "folder":  "JBC-N2 Insulation Piercing Connectors",
+        "name":  "JBC-N2 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "JBC_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "JBG Strain Clamp",
+        "name":  "JBG Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "JBG_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "JBL Abnormal Integrated Type Parallel Groove Clamps",
+        "name":  "JBL Abnormal Integrated Type Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.JPG",
+                       "6.JPG",
+                       "7.JPG",
+                       "8.JPG",
+                       "9.JPG",
+                       "10.JPG"
+                   ],
+        "detailImage":  "DES_04.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "JBL Abnormal Type Parallel Groove Clamps",
+        "name":  "JBL Abnormal Type Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "DES_03.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "JBT Abnormal Type Parallel Groove Clamps",
+        "name":  "JBT Abnormal Type Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "DES_02.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "JBT Parallel Groove Clamps",
+        "name":  "JBT Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "JBT_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "JBTL Abnormal Type  Parallel Groove Clamps",
+        "name":  "JBTL Abnormal Type  Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.JPG",
+                       "8.JPG",
+                       "9.JPG",
+                       "10.JPG"
+                   ],
+        "detailImage":  "DES_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "JBTL Parallel Groove Clamps",
+        "name":  "JBTL Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "JBTL_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "JJC10 Insulation Piercing Connectors",
+        "name":  "JJC10 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "JJC10 DES_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "JJC-7 Insulation Piercing Connectors",
+        "name":  "JJC-7 Insulation Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "JJC-7_01_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "JKGL、JKL Cross-Range Household Clamp",
+        "name":  "JKGL、JKL Cross-Range Household Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "JKG_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "JNS Series Strain Clamp",
+        "name":  "JNS Series Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "JNS DES_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "NES-B1 4 Cores Collection Strain Clamp",
+        "name":  "NES-B1 4 Cores Collection Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "NES_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "NES-B2 4 Cores Collection Strain Clamp",
+        "name":  "NES-B2 4 Cores Collection Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "NES_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "NF010-016 Single Core UV Protect Anchor Clamp",
+        "name":  "NF010-016 Single Core UV Protect Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "NF_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "NF037 Single Core UV Protect Anchor Clamp",
+        "name":  "NF037 Single Core UV Protect Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "NF_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "NF068 Single Core UV Protect Anchor Clamp",
+        "name":  "NF068 Single Core UV Protect Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "NF_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "NF0810 Single Core UV Protect Anchor Clamp",
+        "name":  "NF0810 Single Core UV Protect Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "NF_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "NLD Strain Clamp",
+        "name":  "NLD Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "NLD_01.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "NLL Aluminum Alloy Strain Clamp(Bolt Type)",
+        "name":  "NLL Aluminum Alloy Strain Clamp(Bolt Type)",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "NLL_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "NTD301F Insulation Piercing Clamp",
+        "name":  "NTD301F Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "NTD_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "NTD50-35F Insulation Piercing Clamp",
+        "name":  "NTD50-35F Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "NTD_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "NU-1 Insulation Piercing Clamp",
+        "name":  "NU-1 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "NU Series_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "NU-2 Insulation Piercing Clamp",
+        "name":  "NU-2 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "NU Series_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "NU-3 Insulation Piercing Clamp",
+        "name":  "NU-3 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "NU Series_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "NU-4 Insulation Piercing Clamp",
+        "name":  "NU-4 Insulation Piercing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "NU Series_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "NU-5 Insulation Piercing Clamp",
+        "name":  "NU-5 Insulation Piercing Clamp",
+        "images":  [
+                       "1.png",
+                       "2.png",
+                       "3.png"
+                   ],
+        "detailImage":  "NU Series_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "NUPS54 Suspension Clamp",
+        "name":  "NUPS54 Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "NUPS54_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "NXJ Wedge Strain Clamps For Insulated Cable",
+        "name":  "NXJ Wedge Strain Clamps For Insulated Cable",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.png",
+                       "4.png",
+                       "5.png",
+                       "6.png",
+                       "7.png",
+                       "8.png",
+                       "9.png"
+                   ],
+        "detailImage":  "NXJ DES_01.png",
+        "imageCount":  9
+    },
+    {
+        "folder":  "NXL Wedge Strain Clamp And Insulated Cover",
+        "name":  "NXL Wedge Strain Clamp And Insulated Cover",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "NXL DES_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "NY Strain Clamp(Hydraulic Type)",
+        "name":  "NY Strain Clamp(Hydraulic Type)",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "NY_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "Outdoor Cable Break-free Parallel Groove Clamps",
+        "name":  "Outdoor Cable Break-free Parallel Groove Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Earth Cutoff Breaker Bar-Premium Bus Terminals for Efficient Electrical Connections_01.png",
+        "imageCount":  10
+    },
+    {
+        "folder":  "PA-1500 Anchor Clamp",
+        "name":  "PA-1500 Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "PA500-2200_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PA-2000 Anchor Clamp",
+        "name":  "PA-2000 Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "PA500-2200_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PA-2200 Single Core Anchor Clamp",
+        "name":  "PA-2200 Single Core Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PA500-2200_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PA2-25 2 Cores Anchor Clamp",
+        "name":  "PA2-25 2 Cores Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PA2-35 2 Cores Collection Tension Clamp",
+        "name":  "PA2-35 2 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "PA2-35 PA4-35_01.png",
+        "imageCount":  8
+    },
+    {
+        "folder":  "PA-25 4 Cores Anchor Clamp",
+        "name":  "PA-25 4 Cores Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PA-25B 2 Cores Anchor Clamp",
+        "name":  "PA-25B 2 Cores Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAB_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PA-25C 4 Cores Anchor Clamp",
+        "name":  "PA-25C 4 Cores Anchor Clamp",
+        "images":  [
+                       "0.jpg",
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PA-25D 2 Cores Anchor Clamp",
+        "name":  "PA-25D 2 Cores Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "PA-25E 2 Cores Anchor Clamp",
+        "name":  "PA-25E 2 Cores Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "PA4-35 4 Cores Collection Tension Clamp",
+        "name":  "PA4-35 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "PA2-35 PA4-35_01.png",
+        "imageCount":  9
+    },
+    {
+        "folder":  "PA-500 Single Core Anchor Clamp",
+        "name":  "PA-500 Single Core Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PA500-2200_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PAA-235 Dead End Clamp",
+        "name":  "PAA-235 Dead End Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "PAA-235 PAA-35_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PAA-25 Dead End Clamp",
+        "name":  "PAA-25 Dead End Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "PAA-25 PAA-50_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "PAA-35 Dead End Clamp",
+        "name":  "PAA-35 Dead End Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "PAA-235 PAA-35_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "PAA-50 Dead End Clamp",
+        "name":  "PAA-50 Dead End Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAA-25 PAA-50_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAC 2 Cores Collection Tension Clamp",
+        "name":  "PAC 2 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "PAC-235 PAC-435_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PAC 4 Cores Collection Tension Clamp",
+        "name":  "PAC 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "PAC-235 PAC-435_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "PAD 4 Cores Collection Tension Clamp",
+        "name":  "PAD 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "PAD_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "PAG-2000A Insulation Dead End Clamp",
+        "name":  "PAG-2000A Insulation Dead End Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAG-2000_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAG25-500 Anchor Clamp",
+        "name":  "PAG25-500 Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PA500-2200_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAL-1000 Strain Clamp",
+        "name":  "PAL-1000 Strain Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAL_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAL-1500 Strain Clamp",
+        "name":  "PAL-1500 Strain Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAL_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAL-2000 Strain Clamp",
+        "name":  "PAL-2000 Strain Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAL_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAL-2500 Strain Clamp",
+        "name":  "PAL-2500 Strain Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAL_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAL-500 Strain Clamp",
+        "name":  "PAL-500 Strain Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAL_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAN Single Core Anchor Clamp",
+        "name":  "PAN Single Core Anchor Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PAN_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAR-120 4 Cores Collection Tension Clamp",
+        "name":  "PAR-120 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "PAR_01.png",
+        "imageCount":  7
+    },
+    {
+        "folder":  "PAR20 2 Cores Anchor Clamp",
+        "name":  "PAR20 2 Cores Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PAR21 Anchor Clamp",
+        "name":  "PAR21 Anchor Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "PA_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "PAR-50 4 Cores Collection Tension Clamp",
+        "name":  "PAR-50 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "PAR_01.png",
+        "imageCount":  9
+    },
+    {
+        "folder":  "PAT25 Suspension Clamp",
+        "name":  "PAT25 Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PAT-50 4 Cores Cluster Strain Clamp",
+        "name":  "PAT-50 4 Cores Cluster Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "PAT_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "PAT-50H 4 Cores Collection Tension Clamp",
+        "name":  "PAT-50H 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "PAT-H_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "PAT-50S 4 Cores Collection Tension Clamp",
+        "name":  "PAT-50S 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PAT-H_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PAT-95 4 Cores Cluster Strain Clamp",
+        "name":  "PAT-95 4 Cores Cluster Strain Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "PAT_01.png",
+        "imageCount":  7
+    },
+    {
+        "folder":  "PAT-95H 4 Cores Collection Tension Clamp",
+        "name":  "PAT-95H 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PAT-H_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PAT-95S 4 Cores Collection Tension Clamp",
+        "name":  "PAT-95S 4 Cores Collection Tension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PAT-H_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PS1500A Suspension Clamp",
+        "name":  "PS1500A Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PSP PSPB PSPC_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PSP120 Suspension Clamp",
+        "name":  "PSP120 Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  3
+    },
+    {
+        "folder":  "PSP121 Suspension Clamp",
+        "name":  "PSP121 Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PSP1500B Suspension Clamp",
+        "name":  "PSP1500B Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PSP PSPB PSPC_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PSP25-120 Suspension Clamp",
+        "name":  "PSP25-120 Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "PSP PSPB PSPC_01.png",
+        "imageCount":  6
+    },
+    {
+        "folder":  "PSP25-120B Suspension Clamp",
+        "name":  "PSP25-120B Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PSP PSPB PSPC_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PSPC Suspension Clamp",
+        "name":  "PSPC Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg"
+                   ],
+        "detailImage":  "PSP  95ABCD_01.png",
+        "imageCount":  4
+    },
+    {
+        "folder":  "PT1015 Suspension Clamp",
+        "name":  "PT1015 Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "PT Series Suspension Clamp_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "PT1520 Suspension Clamp",
+        "name":  "PT1520 Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "PT Series Suspension Clamp_01.png",
+        "imageCount":  2
+    },
+    {
+        "folder":  "PT16 Suspension Clamp",
+        "name":  "PT16 Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PT Series Suspension Clamp_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PTB-25 Suspension Clamp",
+        "name":  "PTB-25 Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PT Series Suspension Clamp_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PTB-50 Suspension Clamp",
+        "name":  "PTB-50 Suspension Clamp",
+        "images":  "1.jpg",
+        "detailImage":  "PT Series Suspension Clamp_01.png",
+        "imageCount":  1
+    },
+    {
+        "folder":  "PTB-95 Suspension Clamp",
+        "name":  "PTB-95 Suspension Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "PT Series Suspension Clamp_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "SL400-300 Insulation Piercing Connectors",
+        "name":  "SL400-300 Insulation Piercing Connectors",
+        "images":  [
+                       "1.png",
+                       "2.png",
+                       "3.png",
+                       "4.JPG",
+                       "5.JPG",
+                       "6.jpg",
+                       "7.JPG",
+                       "8.JPG",
+                       "9.jpg"
+                   ],
+        "detailImage":  "SL400_01_01.png",
+        "imageCount":  9
+    },
+    {
+        "folder":  "SLFC Four-core Piercing Connectors",
+        "name":  "SLFC Four-core Piercing Connectors",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "SLFC_01.png",
+        "imageCount":  5
+    },
+    {
+        "folder":  "TJ Brass Bolt Clamp",
+        "name":  "TJ Brass Bolt Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.JPG",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.JPG",
+                       "9.JPG",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_68.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "TT2D82F Insulation Piercing Clamps",
+        "name":  "TT2D82F Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  8
+    },
+    {
+        "folder":  "TTD041FJ Insulation Piercing Clamps",
+        "name":  "TTD041FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  3
+    },
+    {
+        "folder":  "TTD051FJ Insulation Piercing Clamps",
+        "name":  "TTD051FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  2
+    },
+    {
+        "folder":  "TTD101FJ Insulation Piercing Clamps",
+        "name":  "TTD101FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  7
+    },
+    {
+        "folder":  "TTD121F Insulation Piercing Clamps",
+        "name":  "TTD121F Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "TTD151FJ Insulation Piercing Clamps",
+        "name":  "TTD151FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.JPG",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  9
+    },
+    {
+        "folder":  "TTD201FJ Insulation Piercing Clamps",
+        "name":  "TTD201FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.JPG",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  9
+    },
+    {
+        "folder":  "TTD251FJ Insulation Piercing Clamps",
+        "name":  "TTD251FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  3
+    },
+    {
+        "folder":  "TTD271FJ Insulation Piercing Clamps",
+        "name":  "TTD271FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.png",
+                       "5.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  5
+    },
+    {
+        "folder":  "TTD281FJ Insulation Piercing Clamps",
+        "name":  "TTD281FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  8
+    },
+    {
+        "folder":  "TTD301FJ Insulation Piercing Clamps",
+        "name":  "TTD301FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  3
+    },
+    {
+        "folder":  "TTD401FJ Insulation Piercing Clamps",
+        "name":  "TTD401FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  6
+    },
+    {
+        "folder":  "TTD431FJ Insulation Piercing Clamps",
+        "name":  "TTD431FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  5
+    },
+    {
+        "folder":  "TTD441FJ Insulation Piercing Clamps",
+        "name":  "TTD441FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  5
+    },
+    {
+        "folder":  "TTD451FJ Insulation Piercing Clamps",
+        "name":  "TTD451FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  7
+    },
+    {
+        "folder":  "TTD551FJ Insulation Piercing Clamps",
+        "name":  "TTD551FJ Insulation Piercing Clamps",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg"
+                   ],
+        "detailImage":  "TTD SPEC_01.jpg",
+        "imageCount":  7
+    },
+    {
+        "folder":  "WCJB Copper Jointing Clamp",
+        "name":  "WCJB Copper Jointing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_70.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "WCJC Brass Jointing Clamp",
+        "name":  "WCJC Brass Jointing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.png",
+                       "5.jpg",
+                       "6.png",
+                       "7.png",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_69.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "WCJE Brass Jointing Clamp",
+        "name":  "WCJE Brass Jointing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "Cable Lugs and Connectors-Kunde Electric_75.jpg",
+        "imageCount":  10
+    },
+    {
+        "folder":  "WCJF Brass Jointing Clamp",
+        "name":  "WCJF Brass Jointing Clamp",
+        "images":  [
+                       "1.jpg",
+                       "2.jpg",
+                       "3.jpg",
+                       "4.jpg",
+                       "5.jpg",
+                       "6.jpg",
+                       "7.jpg",
+                       "8.jpg",
+                       "9.jpg",
+                       "10.jpg"
+                   ],
+        "detailImage":  "WCJF_01.png",
+        "imageCount":  10
+    }
+]
