@@ -4,7 +4,7 @@
 
 const CATEGORY_ID = 2;
 const CATEGORY_NAME = 'Insulated Terminals';
-const CATEGORY_FOLDER = '2 Insulated Terminals';
+const CATEGORY_FOLDER = '2%20Insulated%20Terminals';
 const PRODUCTS_PER_PAGE = 12;
 const BASE_PATH = 'images/products/product/';
 

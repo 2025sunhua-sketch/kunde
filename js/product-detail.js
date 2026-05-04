@@ -75,7 +75,7 @@ function displayProduct(product, category) {
   // Set title
   document.getElementById('productTitle').textContent = product.name;
   
-  // Set main image
+  // Set main image (first image)
   if (product.images && product.images.length > 0) {
     const mainImage = document.getElementById('mainImage');
     const mainImagePath = `${category.folder}${product.folder}/${product.images[0]}`;

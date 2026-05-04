@@ -4,7 +4,7 @@
 
 const CATEGORY_ID = 3;
 const CATEGORY_NAME = 'Cable Clamps';
-const CATEGORY_FOLDER = '3 Cable Clamps';
+const CATEGORY_FOLDER = '3%20Cable%20Clamps';
 const PRODUCTS_PER_PAGE = 12;
 const BASE_PATH = 'images/products/product/';
 

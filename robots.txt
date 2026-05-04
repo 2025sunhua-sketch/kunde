@@ -1,0 +1,13 @@
+# robots.txt for KUNDE ELECTRIC
+# 允许所有搜索引擎抓取
+
+User-agent: *
+Allow: /
+
+# Sitemap 位置
+Sitemap: https://kunde-electric.pages.dev/sitemap.xml
+
+# 允许抓取所有资源
+Allow: /css/
+Allow: /js/
+Allow: /images/

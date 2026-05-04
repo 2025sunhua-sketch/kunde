@@ -4,7 +4,7 @@
 
 const CATEGORY_ID = 1;
 const CATEGORY_NAME = 'Cable Lugs and Connectors';
-const CATEGORY_FOLDER = '1 Cable Lugs and Connectors';
+const CATEGORY_FOLDER = '1%20Cable%20Lugs%20and%20Connectors';
 const PRODUCTS_PER_PAGE = 12;
 const BASE_PATH = 'images/products/product/';
 
@@ -44,7 +44,7 @@ function loadProducts() {
   const pageProducts = products.slice(start, end);
   
   grid.innerHTML = pageProducts.map(p => `
-    <a href="product-detail.html?category=${CATEGORY_ID}&product=${encodeURIComponent(p.folder)}" 
+    <a href="product-detail.html?category=${CATEGORY_ID}&product=${p.folder}" 
        class="product-card" 
        style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s;">
       <div style="height: 220px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; padding: 10px;">
