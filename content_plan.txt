@@ -1,7 +1,6 @@
 # 博客文章内容计划
 # 每行一个文章标题，# 开头的是注释
 # 脚本会按顺序生成这些主题的专业博文
-Top 5 Trends in Electrical Hardware for Modern Smart Grids
 Best Practices for Crimping Copper-Aluminum Bimetallic Terminals
 DTL-1 vs. DTL-2 Bimetallic Cable Lugs: Which Spec Fits Your Project Voltage Level?
 Tin-Plated vs. Bare Copper Terminals: A 5-Year Corrosion Resistance Comparison
