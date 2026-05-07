@@ -8,14 +8,13 @@
 -->
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBP1X70205"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
-  // 替换为你的 Google Analytics 测量 ID
-  gtag('config', 'YOUR_GA4_ID');
+
+  gtag('config', 'G-GBP1X70205');
 </script>
 
 <!-- 
