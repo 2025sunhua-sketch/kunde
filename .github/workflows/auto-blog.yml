@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Inline Python Generator
         env:
@@ -41,7 +41,7 @@ jobs:
           if not topic:
               print('No topic found'); exit(0)
 
-          # 2. 调用 AI
+          # 2. 调用 Gemini AI
           api_key = os.getenv('GEMINI_API_KEY')
           url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}'
           prompt = f'Write a professional 800-word blog article about: {topic} for the power fittings industry. Use HTML tags like <h2>, <p>, <ul>. Write in English.'
@@ -49,24 +49,26 @@ jobs:
           try:
               res = requests.post(url, json={'contents': [{'parts': [{'text': prompt}]}]})
               ai_text = res.json()['candidates'][0]['content']['parts'][0]['text']
+              # 简单处理 Markdown 转 HTML
               ai_content = ai_text.replace('\n', '<br>')
           except Exception as e:
               ai_content = f'<p>Generation failed: {str(e)}</p>'
 
-          # 3. 生成文章
+          # 3. 生成文章 HTML
           slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')
           filename = f'blog/{slug}.html'
-          date_str = datetime.now().strftime('%Y-%m-%d')
+          date_str = datetime.now().strftime('%b %d, %Y')
           
           with open('blog/article-template.html', 'r', encoding='utf-8') as f:
-              html = f.read()
+              template = f.read()
           
-          final_html = html.replace('{{TITLE}}', topic).replace('{{DATE}}', date_str).replace('{{CONTENT}}', ai_content)
+          final_html = template.replace('{{TITLE}}', topic).replace('{{DATE}}', date_str).replace('{{CONTENT}}', ai_content)
           
+          os.makedirs('blog', exist_ok=True)
           with open(filename, 'w', encoding='utf-8') as f:
               f.write(final_html)
 
-          # 4. 精准更新 blog/index.html
+          # 4. 精准更新 blog/index.html (适配你 index.html 的 blog-card 样式)
           with open(plan_path, 'w', encoding='utf-8') as f:
               f.writelines(remaining)
 
@@ -75,13 +77,24 @@ jobs:
               with open(blog_idx, 'r', encoding='utf-8') as f:
                   idx_html = f.read()
               
-              # 生成符合 blog 页面结构的链接 (注意：这里是在同一文件夹下，无需加 ../)
-              new_entry = f'\n<div class=\"post-item\"><a href=\"{slug}.html\">{topic}</a> <span>({date_str})</span></div>\n'
+              # 构建符合你 blog.html 结构的卡片
+              new_entry = f'''
+      <a href=\"{slug}.html\" class=\"blog-card\">
+        <div class=\"blog-card-date\">{date_str}</div>
+        <h2 class=\"blog-card-title\">{topic}</h2>
+        <p class=\"blog-card-excerpt\">Professional technical analysis and industry insights regarding {topic}, provided by the engineering team at Kunde Electric.</p>
+        <div class=\"blog-card-meta\">
+          <span>By Kunde Electric</span>
+          <span class=\"read-more\">Read More →</span>
+        </div>
+      </a>
+      '''
               
               if '' in idx_html:
                   idx_html = idx_html.replace('', new_entry)
                   with open(blog_idx, 'w', encoding='utf-8') as f:
                       f.write(idx_html)
+                  print(f'✅ Successfully updated {blog_idx}')
           "
 
       - name: Commit and Push Changes
@@ -89,5 +102,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "🤖 自动生成博文并更新目录" || echo "No changes"
+          git commit -m "🤖 自动生成文章并更新博客目录" || echo "No changes"
           git push
