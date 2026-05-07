@@ -39,52 +39,30 @@ jobs:
           SLUG: ${{ steps.topic.outputs.SLUG }}
           FILENAME: ${{ steps.topic.outputs.FILENAME }}
         run: |
-          echo "Generating content for: $TOPIC"
+          python3 -c "
+import os, requests, json
+
+api_key = os.getenv('GEMINI_API_KEY')
+topic = os.getenv('TOPIC')
+
+url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}'
+payload = {'contents': [{'parts': [{'text': f'Write a professional 800-word SEO blog article about: {topic} for power fittings industry. Use HTML tags for formatting.'}]}]}
+
+response = requests.post(url, json=payload)
+content = response.json()['candidates'][0]['content']['parts'][0]['text']
+
+# 将生成的内容存入临时文件
+with open('article_content.txt', 'w') as f:
+    f.write(content)
+"
           
-          # 调用 Gemini API 生成内容
-          if [ -n "$GEMINI_API_KEY" ]; then
-            AI_CONTENT=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY" \
-              -H "Content-Type: application/json" \
-              -d '{
-                "contents": [{
-                  "parts": [{
-                    "text": "Write a professional 600+ word blog article about: '"$TOPIC"' for electrical power fittings. Include technical specifications, industry standards (IEC, DIN), applications, and best practices. Write in English."
-                  }]
-                }]
-              }' | grep -o '"text":"[^"]*"' | head -1 | sed 's/"text":"//;s/"$//' | sed 's/\\n/<br>/g' | sed 's/\\"/"/g')
-            
-            if [ -z "$AI_CONTENT" ]; then
-              AI_CONTENT="<p>Professional article about $TOPIC coming soon.</p>"
-            fi
-          else
-            AI_CONTENT="<p>AI content will be generated when GEMINI_API_KEY is configured.</p>"
-          fi
-          
-          # 读取模板并替换
+          # 将内容注入模板
           DATE=$(date +%Y-%m-%d)
-          if [ -f "blog/article-template.html" ]; then
-            sed "s/{{TITLE}}/$TOPIC/g" blog/article-template.html > "blog/${FILENAME}.html"
-            sed -i "s/{{DATE}}/$DATE/g" "blog/${FILENAME}.html"
-            sed -i "s|{{CONTENT}}|$AI_CONTENT|g" "blog/${FILENAME}.html"
-          else
-            # 如果没有模板，创建基础 HTML
-            cat > "blog/${FILENAME}.html" << HTMLEOF
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$TOPIC | Kunde Electric Blog</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <h1>$TOPIC</h1>
-  <p>Published on $DATE</p>
-  <div>$AI_CONTENT</div>
-</body>
-</html>
-HTMLEOF
-          fi
+          sed "s/{{TITLE}}/$TOPIC/g" blog/article-template.html > "blog/${FILENAME}.html"
+          sed -i "s/{{DATE}}/$DATE/g" "blog/${FILENAME}.html"
+          
+          # 使用特殊方法注入长文本防止报错
+          perl -i -pe 'BEGIN{undef $/;} s/\{\{CONTENT\}\}/`cat article_content.txt`/e' "blog/${FILENAME}.html"
           
           echo "Created: blog/${FILENAME}.html"
 
@@ -95,23 +73,6 @@ HTMLEOF
           FILENAME: ${{ steps.topic.outputs.FILENAME }}
         run: |
           echo "Updating front-end menu..."
-          
-          # 在 index.html 中添加新文章链接
-          if [ -f "index.html" ]; then
-            # 查找文章列表位置并插入新链接
-            sed -i "/<!-- Article List -->/a \
-              <a href=\"blog/${FILENAME}.html\" class=\"blog-card\">\n\
-                <div class=\"blog-card-date\">$(date +%Y-%m-%d)</div>\n\
-                <h2 class=\"blog-card-title\">${TOPIC}</h2>\n\
-                <p class=\"blog-card-excerpt\">[New article]</p>\n\
-                <div class=\"blog-card-meta\">\n\
-                  <span>By Kunde Electric Team</span>\n\
-                  <span class=\"read-more\">Read More →</span>\n\
-                </div>\n\
-              </a>" index.html
-            
-            echo "Updated index.html"
-          fi
           
           # 更新 articles.json
           if [ -f "blog/articles.json" ]; then
@@ -145,7 +106,6 @@ with open('blog/articles.json', 'w') as f:
           
           git add blog/*.html
           git add blog/articles.json
-          git add index.html
           git add content_plan.txt
           
           git commit -m "🤖 Auto-generate: ${{ steps.topic.outputs.TOPIC }}" || echo "No changes"
