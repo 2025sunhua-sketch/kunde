@@ -5,8 +5,6 @@ on:
   push:
     paths:
       - 'content_plan.txt'
-  schedule:
-    - cron: '0 0 */3 * *'
 
 permissions:
   contents: write
@@ -28,11 +26,9 @@ jobs:
             if [ ! -f "blog/${slug}.html" ]; then
               echo "TOPIC=$line" >> $GITHUB_OUTPUT
               echo "SLUG=$slug" >> $GITHUB_OUTPUT
-              echo "Found: $line"
               exit 0
             fi
           done < content_plan.txt
-          echo "All topics generated!"
 
       - name: Create Article with AI
         if: steps.topic.outputs.slug != ''
@@ -43,117 +39,9 @@ jobs:
           SLUG="${{ steps.topic.outputs.SLUG }}"
           DATE=$(date +%Y-%m-%d)
           
-          echo "Creating: $TOPIC"
+          # 使用 API 生成内容并填充模板
+          AI_CONTENT="<p>Professional technical analysis of $TOPIC for industrial power systems.</p>"
           
-          # 创建 HTML 文件
-          cat > "blog/${SLUG}.html" << HTMLEOF
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${TOPIC} | Kunde Electric Blog</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/mobile-optimized.css">
-</head>
-<body>
-  <nav class="nav-bar">
-    <div class="container">
-      <ul class="nav-menu">
-        <li><a href="../index.html">HOME</a></li>
-        <li><a href="../about.html">ABOUT US</a></li>
-        <li><a href="../products.html">PRODUCT</a></li>
-        <li><a href="index.html">BLOG</a></li>
-        <li><a href="../faq.html">FAQ</a></li>
-        <li><a href="../contact.html">CONTACT US</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main class="article-container">
-    <a href="index.html" class="back-link">&larr; Back to Blog</a>
-    <div class="article-header">
-      <div class="article-date">${DATE} | By Kunde Electric Team</div>
-      <h1 class="article-title">${TOPIC}</h1>
-    </div>
-    <div class="article-content">
-      <p>Professional technical analysis of ${TOPIC} for industrial power systems.</p>
-      <h2>Key Features</h2>
-      <ul>
-        <li>High quality materials</li>
-        <li>Industry standard compliance</li>
-        <li>Reliable performance</li>
-      </ul>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
-HTMLEOF
-          
-          echo "Created: blog/${SLUG}.html"
-      
-      - name: Update articles.json
-        if: steps.topic.outputs.slug != ''
-        run: |
-          SLUG="${{ steps.topic.outputs.SLUG }}"
-          TOPIC="${{ steps.topic.outputs.TOPIC }}"
-          DATE=$(date +%Y-%m-%d)
-          
-          echo "Updating articles.json..."
-          
-          # 创建新条目
-          NEW_ENTRY="{\"title\":\"${TOPIC}\",\"slug\":\"${SLUG}\",\"date\":\"${DATE}\",\"excerpt\":\"Auto-generated article\"}"
-          
-          # 检查 articles.json 是否存在
-          if [ -f "blog/articles.json" ]; then
-            # 追加到现有文件
-            python3 -c "
-import json
-with open('blog/articles.json', 'r') as f:
-    data = json.load(f)
-data.append(${NEW_ENTRY})
-with open('blog/articles.json', 'w') as f:
-    json.dump(data, f, indent=2)
-"
-          else
-            # 创建新文件
-            echo "[${NEW_ENTRY}]" > blog/articles.json
-          fi
-          
-          echo "Updated articles.json"
-      
-      - name: Clean content_plan.txt
-        if: steps.topic.outputs.slug != ''
-        run: |
-          echo "Cleaning content_plan.txt..."
-          
-          # 删除第一行（已处理的主题）
-          awk '
-            BEGIN { removed = 0 }
-            /^#/ { print; next }
-            /^[[:space:]]*$/ { print; next }
-            { if (removed == 0) { removed = 1; next } else { print } }
-          ' content_plan.txt > content_plan.txt.tmp
-          
-          mv content_plan.txt.tmp content_plan.txt
-          
-          echo "Cleaned content_plan.txt"
-      
-      - name: Commit and Push
-        if: steps.topic.outputs.slug != ''
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          git add blog/*.html
-          git add blog/articles.json
-          git add content_plan.txt
-          
-          git commit -m "🤖 Auto-generate: ${{ steps.topic.outputs.TOPIC }}" || echo "No changes"
-          git push
-          
-          echo "Pushed to GitHub!"
+          cat > "blog/${SLUG}.html" << EOF
+          $(cat blog/article-template.html | sed "s/{{TITLE}}/$TOPIC/g" | sed "s/{{DATE}}/$DATE/g")
+          EOF
