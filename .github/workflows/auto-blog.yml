@@ -16,67 +16,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Get Next Topic
-        id: topic
-        run: |
-          while IFS= read -r line; do
-            [[ "$line" =~ ^# ]] && continue
-            [[ -z "$line" ]] && continue
-            slug=$(echo "$line" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
-            if [ ! -f "blog/${slug}.html" ]; then
-              echo "TOPIC=$line" >> $GITHUB_OUTPUT
-              echo "FILENAME=$slug" >> $GITHUB_OUTPUT
-              exit 0
-            fi
-          done < content_plan.txt
-
-      - name: Create Article with AI
-        if: steps.topic.outputs.FILENAME != ''
+      - name: Run Generator Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TOPIC: ${{ steps.topic.outputs.TOPIC }}
         run: |
-          # 使用 Python 稳定获取 AI 内容，解决 grep 截断问题
-          python3 -c "
-import os, requests, json
-
-api_key = os.getenv('GEMINI_API_KEY')
-topic = os.getenv('TOPIC')
-
-url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}'
-payload = {'contents': [{'parts': [{'text': f'Write a professional 800-word blog article about: {topic} for electrical power fittings industry. Use HTML tags like <h2>, <p>, and <ul>. Write in English.'}]}]}
-
-try:
-  response = requests.post(url, json=payload)
-  content = response.json()['candidates'][0]['content']['parts'][0]['text']
-  with open('ai_body.txt', 'w') as f:
-    f.write(content.replace('\n', '<br>'))
-except Exception as e:
-  with open('ai_body.txt', 'w') as f:
-    f.write(f'<p>AI Generation failed. Error: {str(e)}</p>')
-"
-          
-          DATE=$(date +%Y-%m-%d)
-          
-          # 读取模板并注入标题和日期
-          sed "s/{{TITLE}}/${{ steps.topic.outputs.TOPIC }}/g" blog/article-template.html | sed "s/{{DATE}}/$DATE/g" > "blog/${{ steps.topic.outputs.FILENAME }}.html"
-          
-          # 使用 perl 注入长文本正文
-          perl -i -pe 'BEGIN{undef $/;} s/\{\{CONTENT\}\}/`cat ai_body.txt`/e' "blog/${{ steps.topic.outputs.FILENAME }}.html"
-
-      - name: Update Front-end Menu
-        if: steps.topic.outputs.FILENAME != ''
-        run: |
-          # 只有 index.html 里有 <!-- Article List --> 标记时才插入链接
-          if grep -q "<!-- Article List -->" index.html; then
-            sed -i "/<!-- Article List -->/a <a href=\"blog/${{ steps.topic.outputs.FILENAME }}.html\" class=\"blog-card\"><h2>${{ steps.topic.outputs.TOPIC }}</h2><p>Published on $(date +%Y-%m-%d)</p></a>" index.html
-          fi
+          python3 .github/workflows/generate_article.py
 
       - name: Commit and Push Changes
-        if: steps.topic.outputs.FILENAME != ''
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "🤖 自动生成博文：${{ steps.topic.outputs.TOPIC }}" || echo "No changes"
+          git commit -m "🤖 自动生成博文及更新索引" || echo "No changes"
           git push
