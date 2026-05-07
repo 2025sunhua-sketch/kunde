@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,7 +24,7 @@
         <a href="mailto:kundelec@126.com">kundelec@126.com</a>
         <a href="tel:+8613566954989">+86-13566954989</a>
       </div>
-      <button class="mobile-menu-toggle">�?/button>
+      <button class="mobile-menu-toggle">鈽?/button>
     </div>
   </header>
 
@@ -35,7 +35,7 @@
         <li><a href="index.html">HOME</a></li>
         <li><a href="about.html">ABOUT US</a></li>
         <li><a href="products.html" class="active">PRODUCT</a></li>
-        <li><a href="production.html">PRODUCTION LINE</a></li>
+        <li><a href="faq.html">FAQ</a></li><li><a href="production.html">PRODUCTION LINE</a></li>
         <li><a href="contact.html">CONTACT US</a></li>
       </ul>
     </div>
@@ -45,7 +45,7 @@
   <section class="product-detail-section">
     <div class="container">
       <div style="margin-bottom: 32px;">
-        <a href="javascript:history.back()" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">�?Back</a>
+        <a href="javascript:history.back()" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">鈫?Back</a>
       </div>
 
       <div id="loading" style="text-align: center; padding: 60px; color: var(--text-muted);">Loading product...</div>
@@ -90,7 +90,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="production.html">Production Line</a></li>
+            <li><a href="faq.html">FAQ</a></li><li><a href="production.html">PRODUCTION LINE</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
@@ -117,14 +117,14 @@
   </footer>
 
   <script>
-    // 产品类别配置（文件夹名称，带空格�?    const CATEGORIES = {
+    // 浜у搧绫诲埆閰嶇疆锛堟枃浠跺す鍚嶇О锛屽甫绌烘牸锛?    const CATEGORIES = {
       1: '1 Cable Lugs and Connectors',
       2: '2 Insulated Terminals',
       3: '3 Cable Clamps'
     };
 
-    // 页面加载完成后执�?    document.addEventListener('DOMContentLoaded', async function() {
-      // �?URL 获取参数
+    // 椤甸潰鍔犺浇瀹屾垚鍚庢墽琛?    document.addEventListener('DOMContentLoaded', async function() {
+      // 浠?URL 鑾峰彇鍙傛暟
       const urlParams = new URLSearchParams(window.location.search);
       const categoryId = parseInt(urlParams.get('category'));
       const productFolder = urlParams.get('product');
@@ -144,7 +144,7 @@
       }
       
       try {
-        // 加载 product-list.json
+        // 鍔犺浇 product-list.json
         const jsonPath = `images/products/product/${categoryFolder}/product-list.json`;
         console.log('Loading JSON:', jsonPath);
         
@@ -156,7 +156,7 @@
         const products = await response.json();
         console.log('Loaded', products.length, 'products');
         
-        // 查找对应的产�?        const product = products.find(p => p.folder === productFolder);
+        // 鏌ユ壘瀵瑰簲鐨勪骇鍝?        const product = products.find(p => p.folder === productFolder);
         
         if (!product) {
           throw new Error(`Product "${productFolder}" not found`);
@@ -164,14 +164,14 @@
         
         console.log('Found product:', product.name);
         
-        // 构建基础路径
+        // 鏋勫缓鍩虹璺緞
         const basePath = `images/products/product/${categoryFolder}/${product.folder}/`;
         console.log('Base path:', basePath);
         
-        // 显示产品标题
+        // 鏄剧ず浜у搧鏍囬
         document.getElementById('productTitle').textContent = product.name;
         
-        // 显示主图（第一张）
+        // 鏄剧ず涓诲浘锛堢涓€寮狅級
         if (product.images && product.images.length > 0) {
           const mainImagePath = basePath + product.images[0];
           console.log('Main image:', mainImagePath);
@@ -180,7 +180,7 @@
           mainImage.src = mainImagePath;
           mainImage.alt = product.name;
           
-          // 显示缩略�?          const thumbnailContainer = document.getElementById('thumbnailContainer');
+          // 鏄剧ず缂╃暐鍥?          const thumbnailContainer = document.getElementById('thumbnailContainer');
           thumbnailContainer.innerHTML = product.images.map((img, index) => {
             const imgPath = basePath + img;
             return `
@@ -191,7 +191,7 @@
           }).join('');
         }
         
-        // 显示详情�?        if (product.detailImage) {
+        // 鏄剧ず璇︽儏鍥?        if (product.detailImage) {
           const detailImagePath = basePath + product.detailImage;
           console.log('Detail image:', detailImagePath);
           
@@ -200,7 +200,7 @@
           detailImage.alt = product.name + ' - Specifications';
         }
         
-        // 隐藏加载，显示内�?        document.getElementById('loading').style.display = 'none';
+        // 闅愯棌鍔犺浇锛屾樉绀哄唴瀹?        document.getElementById('loading').style.display = 'none';
         document.getElementById('productContent').style.display = 'grid';
         
       } catch (error) {
@@ -209,7 +209,7 @@
       }
     });
     
-    // 切换主图
+    // 鍒囨崲涓诲浘
     function changeImage(imageSrc, thumbnail) {
       document.getElementById('mainImage').src = imageSrc;
       document.querySelectorAll('[onclick^="changeImage"]').forEach(t => t.style.borderColor = 'transparent');
@@ -218,3 +218,4 @@
   </script>
 </body>
 </html>
+

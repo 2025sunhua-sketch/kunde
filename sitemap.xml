@@ -531,5 +531,13 @@
     <priority>0.7</priority>
   </url>
 
-</urlset>
 
+  <!-- FAQ 页面 -->
+  <url>
+    <loc>https://kdelec.com/faq.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
