@@ -20,9 +20,10 @@ jobs:
       - name: Get Next Topic
         id: topic
         run: |
-          echo "Reading content_plan.txt..."
+          echo "📖 Reading content_plan.txt..."
+          
+          # Read first valid topic (skip comments and empty lines)
           while IFS= read -r line; do
-            # Skip comments and empty lines
             [[ "$line" =~ ^# ]] && continue
             [[ -z "$line" ]] && continue
             
@@ -33,12 +34,15 @@ jobs:
             if [ ! -f "blog/${slug}.html" ]; then
               echo "TOPIC=$line" >> $GITHUB_OUTPUT
               echo "SLUG=$slug" >> $GITHUB_OUTPUT
-              echo "✅ Found: $line"
+              echo "✅ Found topic: $line"
+              echo "🔗 Slug: $slug"
               exit 0
+            else
+              echo "⏭️  Skipping (already exists): $slug"
             fi
           done < content_plan.txt
           
-          echo "All topics generated!"
+          echo "✅ All topics generated!"
           exit 0
       
       - name: Create Article with AI
@@ -50,10 +54,11 @@ jobs:
           SLUG="${{ steps.topic.outputs.SLUG }}"
           DATE=$(date +%Y-%m-%d)
           
-          echo "Generating content for: $TOPIC"
+          echo "🤖 Generating content for: $TOPIC"
           
           # Generate content with Gemini AI
           if [ -n "$GEMINI_API_KEY" ]; then
+            echo "🔑 Using Gemini API..."
             AI_CONTENT=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY" \
               -H "Content-Type: application/json" \
               -d '{
@@ -65,9 +70,11 @@ jobs:
               }' | grep -o '"text":"[^"]*"' | head -1 | sed 's/"text":"//;s/"$//' | sed 's/\\n/\n/g' | sed 's/\\"/"/g')
             
             if [ -z "$AI_CONTENT" ]; then
+              echo "⚠️  AI content empty, using fallback"
               AI_CONTENT="<p>Professional article about $TOPIC will be added soon.</p><h2>Key Features</h2><ul><li>High quality materials</li><li>Industry standard compliance</li><li>Reliable performance</li></ul>"
             fi
           else
+            echo "⚠️  No GEMINI_API_KEY, using placeholder"
             AI_CONTENT="<p>Article content will be generated with AI. Topic: $TOPIC</p><h2>Overview</h2><p>Professional content coming soon...</p>"
           fi
           
@@ -130,12 +137,89 @@ HTMLEOF
           
           echo "✅ Created: blog/${SLUG}.html"
       
-      - name: Commit and Push
+      - name: Update articles.json
         if: steps.topic.outputs.slug != ''
         run: |
+          SLUG="${{ steps.topic.outputs.SLUG }}"
+          TOPIC="${{ steps.topic.outputs.TOPIC }}"
+          DATE=$(date +%Y-%m-%d)
+          
+          echo "📝 Updating articles.json..."
+          
+          # Create new entry
+          NEW_ENTRY="{\"title\":\"${TOPIC}\",\"slug\":\"${SLUG}\",\"date\":\"${DATE}\",\"excerpt\":\"AI-generated article\"}"
+          
+          # Check if articles.json exists
+          if [ -f "blog/articles.json" ]; then
+            echo "📖 Found existing articles.json"
+            # Remove closing bracket, add comma and new entry, add closing bracket
+            sed -i 's/\]$//' blog/articles.json
+            echo ",$NEW_ENTRY]" > blog/articles.json.tmp
+            cat blog/articles.json blog/articles.json.tmp > blog/articles.json.new
+            mv blog/articles.json.new blog/articles.json
+            rm blog/articles.json.tmp
+          else
+            echo "📄 Creating new articles.json"
+            echo "[$NEW_ENTRY]" > blog/articles.json
+          fi
+          
+          echo "✅ Updated articles.json"
+          cat blog/articles.json
+      
+      - name: Clean content_plan.txt
+        if: steps.topic.outputs.slug != ''
+        run: |
+          echo "🧹 Cleaning content_plan.txt..."
+          
+          # Remove first line (the topic we just processed)
+          # Keep comments and empty lines, remove the first non-comment non-empty line
+          awk '
+            BEGIN { removed = 0 }
+            /^#/ { print; next }
+            /^[[:space:]]*$/ { print; next }
+            { if (removed == 0) { removed = 1; next } else { print } }
+          ' content_plan.txt > content_plan.txt.tmp
+          
+          mv content_plan.txt.tmp content_plan.txt
+          
+          echo "✅ Removed processed topic from content_plan.txt"
+          echo "📊 Remaining topics:"
+          grep -v '^#' content_plan.txt | grep -v '^$' | wc -l
+      
+      - name: Commit and Push All Changes
+        if: steps.topic.outputs.slug != ''
+        run: |
+          echo "🚀 Pushing all changes to GitHub..."
+          
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Add all changed files
           git add blog/*.html
-          git commit -m "🤖 Auto-generate blog: ${{ steps.topic.outputs.TOPIC }}" || echo "No changes"
+          git add blog/articles.json
+          git add content_plan.txt
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "⚠️  No changes to commit"
+            exit 0
+          fi
+          
+          # Commit with detailed message
+          git commit -m "🤖 Auto-generate blog post
+
+Topic: ${{ steps.topic.outputs.TOPIC }}
+Slug: ${{ steps.topic.outputs.SLUG }}
+
+Changes:
+- Created blog post HTML
+- Updated articles.json
+- Cleaned content_plan.txt
+
+Generated by GitHub Actions + Gemini AI"
+          
+          # Push to remote
           git push
-          echo "✅ Pushed to GitHub!"
+          
+          echo "✅ Successfully pushed to GitHub!"
+          echo "🎉 Blog post generated and published!"
