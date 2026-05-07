@@ -53,44 +53,34 @@ jobs:
           except Exception as e:
               ai_content = f'<p>Generation failed: {str(e)}</p>'
 
-          # 3. 生成 HTML
+          # 3. 生成 HTML 文件
           slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')
           filename = f'blog/{slug}.html'
           date_str = datetime.now().strftime('%Y-%m-%d')
           
-          template_path = 'blog/article-template.html'
-          with open(template_path, 'r', encoding='utf-8') as f:
+          with open('blog/article-template.html', 'r', encoding='utf-8') as f:
               html = f.read()
           
-          html = html.replace('{{TITLE}}', topic).replace('{{DATE}}', date_str).replace('{{CONTENT}}', ai_content)
+          final_html = html.replace('{{TITLE}}', topic).replace('{{DATE}}', date_str).replace('{{CONTENT}}', ai_content)
           
           os.makedirs('blog', exist_ok=True)
           with open(filename, 'w', encoding='utf-8') as f:
-              f.write(html)
+              f.write(final_html)
 
-          # 4. 更新计划书
+          # 4. 更新计划书和 vlog 目录下的 index.html
           with open(plan_path, 'w', encoding='utf-8') as f:
               f.writelines(remaining)
 
-          # 5. 精准更新 vlog 目录下的 index.html
-          vlog_index_path = 'vlog/index.html'
-          if os.path.exists(vlog_index_path):
-              with open(vlog_index_path, 'r', encoding='utf-8') as f:
+          vlog_idx = 'vlog/index.html'
+          if os.path.exists(vlog_idx):
+              with open(vlog_idx, 'r', encoding='utf-8') as f:
                   idx_html = f.read()
-              
-              # 构建符合你 vlog 页面样式的 HTML 块
-              # 注意：因为文章在 blog/ 文件夹，从 vlog/ 进去需要用 ../blog/ 路径
-              new_entry = f'\n<div class="vlog-item"><a href="../blog/{slug}.html">{topic}</a> <span>({date_str})</span></div>\n'
-              
-              if '<!-- Article List -->' in idx_html:
-                  idx_html = idx_html.replace('<!-- Article List -->', new_entry)
-                  with open(vlog_index_path, 'w', encoding='utf-8') as f:
+              # 链接前缀加 ../ 指向 blog 文件夹
+              new_link = f'\n<a href=\"../{filename}\" class=\"vlog-card\"><h2>{topic}</h2><p>Published on {date_str}</p></a>\n'
+              if '' in idx_html:
+                  idx_html = idx_html.replace('', new_link)
+                  with open(vlog_idx, 'w', encoding='utf-8') as f:
                       f.write(idx_html)
-                  print(f'✅ 已成功更新 {vlog_index_path}')
-              else:
-                  print('⚠️ 警告：在 vlog/index.html 中未找到 <!-- Article List --> 标记')
-          
-          print(f'Successfully generated {filename}')
           "
 
       - name: Commit and Push Changes
@@ -98,5 +88,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "🤖 自动生成: 深度内容文章" || echo "No changes"
+          git commit -m "🤖 自动生成博文并更新Vlog" || echo "No changes"
           git push
