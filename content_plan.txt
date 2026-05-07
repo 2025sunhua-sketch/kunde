@@ -1,7 +1,7 @@
 # 博客文章内容计划
 # 每行一个文章标题，# 开头的是注释
 # 脚本会按顺序生成这些主题的专业博文
-The Advantages of Forged Steel vs Cast Iron in Power Fittings
+Installation Guide: Ensuring Reliability with Insulation Piercing Connectors
 How to Specify Cable Lugs in Engineering Drawings: Tolerances, Material Codes, and Procurement Notes
 Understanding IEC 61238 Standards for Electrical Connections: A Field Engineer's Checklist
 Best Practices for Crimping Copper-Aluminum Bimetallic Terminals
