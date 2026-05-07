@@ -35,13 +35,20 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          # 这一步会生成文件到 blog 文件夹
+          DATE=$(date +%Y-%m-%d)
           TOPIC="${{ steps.topic.outputs.TOPIC }}"
           SLUG="${{ steps.topic.outputs.SLUG }}"
-          DATE=$(date +%Y-%m-%d)
           
-          # 使用 API 生成内容并填充模板
-          AI_CONTENT="<p>Professional technical analysis of $TOPIC for industrial power systems.</p>"
-          
-          cat > "blog/${SLUG}.html" << EOF
-          $(cat blog/article-template.html | sed "s/{{TITLE}}/$TOPIC/g" | sed "s/{{DATE}}/$DATE/g")
-          EOF
+          echo "<h1>$TOPIC</h1><p>Published on $DATE</p>" > "blog/${SLUG}.html"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          # 强制添加 blog 文件夹下的所有新文件
+          git add blog/*.html
+          # 提交修改，如果没变化就跳过
+          git commit -m "🤖 自动生成博文：${{ steps.topic.outputs.TOPIC }}" || echo "没有新内容需要提交"
+          # 推送到仓库
+          git push
