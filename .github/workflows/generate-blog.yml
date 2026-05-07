@@ -1,0 +1,99 @@
+name: Generate Blog Posts
+
+on:
+  push:
+    paths:
+      - 'blog/posts/*.md'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: |
+          npm install -g marked
+      
+      - name: Generate HTML from Markdown
+        run: |
+          mkdir -p blog/generated
+          for file in blog/posts/*.md; do
+            filename=$(basename "$file" .md)
+            echo "Converting $file to blog/generated/$filename.html"
+            
+            # 读取 Markdown 内容
+            content=$(cat "$file")
+            
+            # 提取标题
+            title=$(echo "$content" | grep '^# ' | head -1 | sed 's/^# //')
+            
+            # 提取日期
+            date=$(echo "$content" | grep '^date:' | sed 's/^date: //')
+            
+            # 提取正文（跳过 front matter）
+            body=$(echo "$content" | sed '1,/^---$/d' | marked)
+            
+            # 生成 HTML
+            cat > "blog/generated/$filename.html" << EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$title | Kunde Electric Blog</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/mobile-optimized.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="../../index.html">HOME</a></li>
+        <li><a href="../../about.html">ABOUT US</a></li>
+        <li><a href="../../products.html">PRODUCT</a></li>
+        <li><a href="../index.html">BLOG</a></li>
+        <li><a href="../../contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Content -->
+  <main class="faq-container">
+    <div class="container" style="max-width: 800px; padding: 60px 20px;">
+      <a href="../index.html" style="color: #06c; text-decoration: none; display: inline-block; margin-bottom: 20px;">&larr; Back to Blog</a>
+      <h1 style="font-size: 36px; color: #1a3d6e; margin-bottom: 16px;">$title</h1>
+      <p style="color: #666; margin-bottom: 40px;">Published: $date</p>
+      
+      <div style="font-size: 16px; line-height: 1.8; color: #333;">
+        $body
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+EOF
+          done
+      
+      - name: Commit and push generated files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add blog/generated/
+          git commit -m "Auto-generate blog posts from Markdown" || echo "No changes to commit"
+          git push
