@@ -1,7 +1,6 @@
 # 博客文章内容计划
 # 每行一个文章标题，# 开头的是注释
 # 脚本会按顺序生成这些主题的专业博文
-Preventing Corrosion in Outdoor Power Connectors: A Technical Review
 Understanding IEC 61238 Standards for Electrical Connections: A Field Engineer's Checklist
 Best Practices for Crimping Copper-Aluminum Bimetallic Terminals
 DTL-1 vs. DTL-2 Bimetallic Cable Lugs: Which Spec Fits Your Project Voltage Level?
