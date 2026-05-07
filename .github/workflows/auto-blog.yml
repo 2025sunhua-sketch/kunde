@@ -26,6 +26,7 @@ jobs:
             if [ ! -f "blog/${slug}.html" ]; then
               echo "TOPIC=$line" >> $GITHUB_OUTPUT
               echo "SLUG=$slug" >> $GITHUB_OUTPUT
+              echo "FILENAME=$slug" >> $GITHUB_OUTPUT
               exit 0
             fi
           done < content_plan.txt
@@ -34,21 +35,120 @@ jobs:
         if: steps.topic.outputs.slug != ''
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TOPIC: ${{ steps.topic.outputs.TOPIC }}
+          SLUG: ${{ steps.topic.outputs.SLUG }}
+          FILENAME: ${{ steps.topic.outputs.FILENAME }}
         run: |
-          # 这一步会生成文件到 blog 文件夹
-          DATE=$(date +%Y-%m-%d)
-          TOPIC="${{ steps.topic.outputs.TOPIC }}"
-          SLUG="${{ steps.topic.outputs.SLUG }}"
+          echo "Generating content for: $TOPIC"
           
-          echo "<h1>$TOPIC</h1><p>Published on $DATE</p>" > "blog/${SLUG}.html"
+          # 调用 Gemini API 生成内容
+          if [ -n "$GEMINI_API_KEY" ]; then
+            AI_CONTENT=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{
+                "contents": [{
+                  "parts": [{
+                    "text": "Write a professional 600+ word blog article about: '"$TOPIC"' for electrical power fittings. Include technical specifications, industry standards (IEC, DIN), applications, and best practices. Write in English."
+                  }]
+                }]
+              }' | grep -o '"text":"[^"]*"' | head -1 | sed 's/"text":"//;s/"$//' | sed 's/\\n/<br>/g' | sed 's/\\"/"/g')
+            
+            if [ -z "$AI_CONTENT" ]; then
+              AI_CONTENT="<p>Professional article about $TOPIC coming soon.</p>"
+            fi
+          else
+            AI_CONTENT="<p>AI content will be generated when GEMINI_API_KEY is configured.</p>"
+          fi
+          
+          # 读取模板并替换
+          DATE=$(date +%Y-%m-%d)
+          if [ -f "blog/article-template.html" ]; then
+            sed "s/{{TITLE}}/$TOPIC/g" blog/article-template.html > "blog/${FILENAME}.html"
+            sed -i "s/{{DATE}}/$DATE/g" "blog/${FILENAME}.html"
+            sed -i "s|{{CONTENT}}|$AI_CONTENT|g" "blog/${FILENAME}.html"
+          else
+            # 如果没有模板，创建基础 HTML
+            cat > "blog/${FILENAME}.html" << HTMLEOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$TOPIC | Kunde Electric Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h1>$TOPIC</h1>
+  <p>Published on $DATE</p>
+  <div>$AI_CONTENT</div>
+</body>
+</html>
+HTMLEOF
+          fi
+          
+          echo "Created: blog/${FILENAME}.html"
+
+      - name: Update Front-end Menu
+        if: steps.topic.outputs.slug != ''
+        env:
+          TOPIC: ${{ steps.topic.outputs.TOPIC }}
+          FILENAME: ${{ steps.topic.outputs.FILENAME }}
+        run: |
+          echo "Updating front-end menu..."
+          
+          # 在 index.html 中添加新文章链接
+          if [ -f "index.html" ]; then
+            # 查找文章列表位置并插入新链接
+            sed -i "/<!-- Article List -->/a \
+              <a href=\"blog/${FILENAME}.html\" class=\"blog-card\">\n\
+                <div class=\"blog-card-date\">$(date +%Y-%m-%d)</div>\n\
+                <h2 class=\"blog-card-title\">${TOPIC}</h2>\n\
+                <p class=\"blog-card-excerpt\">[New article]</p>\n\
+                <div class=\"blog-card-meta\">\n\
+                  <span>By Kunde Electric Team</span>\n\
+                  <span class=\"read-more\">Read More →</span>\n\
+                </div>\n\
+              </a>" index.html
+            
+            echo "Updated index.html"
+          fi
+          
+          # 更新 articles.json
+          if [ -f "blog/articles.json" ]; then
+            python3 -c "
+import json
+with open('blog/articles.json', 'r') as f:
+    data = json.load(f)
+data.insert(0, {'title': '${TOPIC}', 'slug': '${FILENAME}', 'date': '$(date +%Y-%m-%d)'})
+with open('blog/articles.json', 'w') as f:
+    json.dump(data, f, indent=2)
+"
+          else
+            echo "[{\"title\":\"${TOPIC}\",\"slug\":\"${FILENAME}\",\"date\":\"$(date +%Y-%m-%d)\"}]" > blog/articles.json
+          fi
+          
+          echo "Updated articles.json"
+
+      - name: Clean content_plan.txt
+        if: steps.topic.outputs.slug != ''
+        run: |
+          echo "Cleaning content_plan.txt..."
+          awk 'BEGIN{removed=0} /^#/{print;next} /^[[:space:]]*$/{print;next} {if(removed==0){removed=1;next}else{print}}' content_plan.txt > content_plan.txt.tmp
+          mv content_plan.txt.tmp content_plan.txt
+          echo "Cleaned content_plan.txt"
 
       - name: Commit and Push Changes
+        if: steps.topic.outputs.slug != ''
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # 强制添加 blog 文件夹下的所有新文件
+          
           git add blog/*.html
-          # 提交修改，如果没变化就跳过
-          git commit -m "🤖 自动生成博文：${{ steps.topic.outputs.TOPIC }}" || echo "没有新内容需要提交"
-          # 推送到仓库
+          git add blog/articles.json
+          git add index.html
+          git add content_plan.txt
+          
+          git commit -m "🤖 Auto-generate: ${{ steps.topic.outputs.TOPIC }}" || echo "No changes"
           git push
+          
+          echo "✅ Pushed to GitHub!"
