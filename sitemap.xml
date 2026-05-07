@@ -2,10 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ========================================
-       核心页面（最高优先级）
+       核心页面
        ======================================== -->
   
-  <!-- 首页 -->
   <url>
     <loc>https://kdelec.com/</loc>
     <lastmod>2026-05-07</lastmod>
@@ -13,7 +12,6 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- 产品入口页 -->
   <url>
     <loc>https://kdelec.com/products.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -21,7 +19,6 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- 博客首页 -->
   <url>
     <loc>https://kdelec.com/blog.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -29,7 +26,6 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- 关于我们 -->
   <url>
     <loc>https://kdelec.com/about.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -37,7 +33,6 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- FAQ -->
   <url>
     <loc>https://kdelec.com/faq.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -45,7 +40,6 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- 联系我们 -->
   <url>
     <loc>https://kdelec.com/contact.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -53,7 +47,6 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- 生产线 -->
   <url>
     <loc>https://kdelec.com/production.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -87,7 +80,7 @@
   </url>
 
   <!-- ========================================
-       产品详情页（前 50 个）
+       产品详情页（322 个，示例前 50 个）
        ======================================== -->
   
   <url>
@@ -124,12 +117,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
+  <url>
+    <loc>https://kdelec.com/product/product-0006</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kdelec.com/product/product-0007</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kdelec.com/product/product-0008</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kdelec.com/product/product-0009</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kdelec.com/product/product-0010</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- ========================================
-       博客文章
+       博客文章（已发布的 4 篇）
        ======================================== -->
   
-  <!-- 已发布的文章 -->
   <url>
     <loc>https://kdelec.com/blog/bimetallic-lugs-prevent-galvanic-corrosion.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -156,49 +183,6 @@
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <!-- 计划中的文章（根据 content_plan.txt） -->
-  <url>
-    <loc>https://kdelec.com/blog/how-to-specify-cable-lugs-engineering-drawings.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kdelec.com/blog/iec-61238-standards-electrical-connections.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kdelec.com/blog/crimping-copper-aluminum-bimetallic-terminals.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kdelec.com/blog/dtl-1-vs-dtl-2-bimetallic-cable-lugs.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kdelec.com/blog/tin-plated-vs-bare-copper-terminals.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kdelec.com/blog/what-is-t2-copper-conductivity.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 
 </urlset>
