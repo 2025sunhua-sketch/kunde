@@ -16,16 +16,78 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Run Generator Script
+      - name: Run Inline Python Generator
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python3 .github/workflows/generate_article.py
+          python3 -c "
+          import os, requests, json, re
+          from datetime import datetime
+
+          # 1. 读取标题
+          plan_path = 'content_plan.txt'
+          if not os.path.exists(plan_path): exit(0)
+          with open(plan_path, 'r', encoding='utf-8') as f:
+              lines = f.readlines()
+
+          topic = ''
+          remaining = []
+          for line in lines:
+              if not topic and line.strip() and not line.startswith('#'):
+                  topic = line.strip()
+              else:
+                  remaining.append(line)
+
+          if not topic:
+              print('No topic found'); exit(0)
+
+          # 2. 调用 Gemini API
+          api_key = os.getenv('GEMINI_API_KEY')
+          url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}'
+          prompt = f'Write a professional 800-word blog article about: {topic} for the power fittings industry. Use HTML tags like <h2>, <p>, <ul>. Write in English.'
+          
+          try:
+              res = requests.post(url, json={'contents': [{'parts': [{'text': prompt}]}]})
+              ai_text = res.json()['candidates'][0]['content']['parts'][0]['text']
+              ai_content = ai_text.replace('\n', '<br>')
+          except Exception as e:
+              ai_content = f'<p>Generation failed: {str(e)}</p>'
+
+          # 3. 生成 HTML
+          slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')
+          filename = f'blog/{slug}.html'
+          date_str = datetime.now().strftime('%Y-%m-%d')
+          
+          template_path = 'blog/article-template.html'
+          with open(template_path, 'r', encoding='utf-8') as f:
+              html = f.read()
+          
+          html = html.replace('{{TITLE}}', topic).replace('{{DATE}}', date_str).replace('{{CONTENT}}', ai_content)
+          
+          os.makedirs('blog', exist_ok=True)
+          with open(filename, 'w', encoding='utf-8') as f:
+              f.write(html)
+
+          # 4. 更新计划书和首页
+          with open(plan_path, 'w', encoding='utf-8') as f:
+              f.writelines(remaining)
+
+          index_path = 'index.html'
+          if os.path.exists(index_path):
+              with open(index_path, 'r', encoding='utf-8') as f:
+                  idx_html = f.read()
+              new_link = f'\n\n<a href=\"{filename}\" class=\"blog-card\"><h2>{topic}</h2><p>Published on {date_str}</p></a>'
+              idx_html = idx_html.replace('', new_link)
+              with open(index_path, 'w', encoding='utf-8') as f:
+                  f.write(idx_html)
+          
+          print(f'Successfully generated {filename}')
+          "
 
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "🤖 自动生成博文及更新索引" || echo "No changes"
+          git commit -m "🤖 自动生成: 深度内容文章" || echo "No changes"
           git push
