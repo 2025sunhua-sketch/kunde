@@ -2,6 +2,9 @@ name: Auto Generate Blog Post
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'content_plan.txt'
   schedule:
     - cron: '0 0 */3 * *'
 
@@ -14,37 +17,23 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Get Next Topic
         id: topic
         run: |
-          echo "📖 Reading content_plan.txt..."
-          
-          # Read first valid topic (skip comments and empty lines)
           while IFS= read -r line; do
             [[ "$line" =~ ^# ]] && continue
             [[ -z "$line" ]] && continue
-            
-            # Generate slug
             slug=$(echo "$line" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
-            
-            # Check if already exists
             if [ ! -f "blog/${slug}.html" ]; then
               echo "TOPIC=$line" >> $GITHUB_OUTPUT
               echo "SLUG=$slug" >> $GITHUB_OUTPUT
-              echo "✅ Found topic: $line"
-              echo "🔗 Slug: $slug"
+              echo "Found: $line"
               exit 0
-            else
-              echo "⏭️  Skipping (already exists): $slug"
             fi
           done < content_plan.txt
-          
-          echo "✅ All topics generated!"
-          exit 0
-      
+          echo "All topics generated!"
+
       - name: Create Article with AI
         if: steps.topic.outputs.slug != ''
         env:
@@ -54,31 +43,9 @@ jobs:
           SLUG="${{ steps.topic.outputs.SLUG }}"
           DATE=$(date +%Y-%m-%d)
           
-          echo "🤖 Generating content for: $TOPIC"
+          echo "Creating: $TOPIC"
           
-          # Generate content with Gemini AI
-          if [ -n "$GEMINI_API_KEY" ]; then
-            echo "🔑 Using Gemini API..."
-            AI_CONTENT=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$GEMINI_API_KEY" \
-              -H "Content-Type: application/json" \
-              -d '{
-                "contents": [{
-                  "parts": [{
-                    "text": "Write a professional 600+ word blog article about: '"$TOPIC"'. Requirements: Write for electrical engineers, include technical specs and industry standards (IEC, DIN), use professional tone, include h2 and h3 headings, use HTML tags (h2, h3, p, ul, li, table, tr, td), do NOT include html/head/body tags, write in English"
-                  }]
-                }]
-              }' | grep -o '"text":"[^"]*"' | head -1 | sed 's/"text":"//;s/"$//' | sed 's/\\n/\n/g' | sed 's/\\"/"/g')
-            
-            if [ -z "$AI_CONTENT" ]; then
-              echo "⚠️  AI content empty, using fallback"
-              AI_CONTENT="<p>Professional article about $TOPIC will be added soon.</p><h2>Key Features</h2><ul><li>High quality materials</li><li>Industry standard compliance</li><li>Reliable performance</li></ul>"
-            fi
-          else
-            echo "⚠️  No GEMINI_API_KEY, using placeholder"
-            AI_CONTENT="<p>Article content will be generated with AI. Topic: $TOPIC</p><h2>Overview</h2><p>Professional content coming soon...</p>"
-          fi
-          
-          # Create HTML file
+          # 创建 HTML 文件
           cat > "blog/${SLUG}.html" << HTMLEOF
 <!DOCTYPE html>
 <html lang="en">
@@ -88,20 +55,6 @@ jobs:
   <title>${TOPIC} | Kunde Electric Blog</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/mobile-optimized.css">
-  <style>
-    .article-container{max-width:800px;margin:0 auto;padding:60px 20px}
-    .article-header{margin-bottom:40px;border-bottom:2px solid #e0e0e0;padding-bottom:20px}
-    .article-date{color:#999;font-size:14px;margin-bottom:12px}
-    .article-title{font-size:36px;color:#1a3d6e;margin:0;line-height:1.3}
-    .article-content{font-size:16px;line-height:1.8;color:#333}
-    .article-content h2{font-size:24px;color:#1a3d6e;margin:40px 0 20px 0}
-    .article-content h3{font-size:20px;color:#1a3d6e;margin:30px 0 15px 0}
-    .article-content p{margin:20px 0}
-    .article-content ul,.article-content ol{margin:20px 0;padding-left:30px}
-    .article-content li{margin:10px 0}
-    .back-link{display:inline-block;color:#06c;text-decoration:none;margin-bottom:30px}
-    .back-link:hover{text-decoration:underline}
-  </style>
 </head>
 <body>
   <nav class="nav-bar">
@@ -123,7 +76,13 @@ jobs:
       <h1 class="article-title">${TOPIC}</h1>
     </div>
     <div class="article-content">
-${AI_CONTENT}
+      <p>Professional technical analysis of ${TOPIC} for industrial power systems.</p>
+      <h2>Key Features</h2>
+      <ul>
+        <li>High quality materials</li>
+        <li>Industry standard compliance</li>
+        <li>Reliable performance</li>
+      </ul>
     </div>
   </main>
   <footer class="footer">
@@ -135,7 +94,7 @@ ${AI_CONTENT}
 </html>
 HTMLEOF
           
-          echo "✅ Created: blog/${SLUG}.html"
+          echo "Created: blog/${SLUG}.html"
       
       - name: Update articles.json
         if: steps.topic.outputs.slug != ''
@@ -144,35 +103,35 @@ HTMLEOF
           TOPIC="${{ steps.topic.outputs.TOPIC }}"
           DATE=$(date +%Y-%m-%d)
           
-          echo "📝 Updating articles.json..."
+          echo "Updating articles.json..."
           
-          # Create new entry
-          NEW_ENTRY="{\"title\":\"${TOPIC}\",\"slug\":\"${SLUG}\",\"date\":\"${DATE}\",\"excerpt\":\"AI-generated article\"}"
+          # 创建新条目
+          NEW_ENTRY="{\"title\":\"${TOPIC}\",\"slug\":\"${SLUG}\",\"date\":\"${DATE}\",\"excerpt\":\"Auto-generated article\"}"
           
-          # Check if articles.json exists
+          # 检查 articles.json 是否存在
           if [ -f "blog/articles.json" ]; then
-            echo "📖 Found existing articles.json"
-            # Remove closing bracket, add comma and new entry, add closing bracket
-            sed -i 's/\]$//' blog/articles.json
-            echo ",$NEW_ENTRY]" > blog/articles.json.tmp
-            cat blog/articles.json blog/articles.json.tmp > blog/articles.json.new
-            mv blog/articles.json.new blog/articles.json
-            rm blog/articles.json.tmp
+            # 追加到现有文件
+            python3 -c "
+import json
+with open('blog/articles.json', 'r') as f:
+    data = json.load(f)
+data.append(${NEW_ENTRY})
+with open('blog/articles.json', 'w') as f:
+    json.dump(data, f, indent=2)
+"
           else
-            echo "📄 Creating new articles.json"
-            echo "[$NEW_ENTRY]" > blog/articles.json
+            # 创建新文件
+            echo "[${NEW_ENTRY}]" > blog/articles.json
           fi
           
-          echo "✅ Updated articles.json"
-          cat blog/articles.json
+          echo "Updated articles.json"
       
       - name: Clean content_plan.txt
         if: steps.topic.outputs.slug != ''
         run: |
-          echo "🧹 Cleaning content_plan.txt..."
+          echo "Cleaning content_plan.txt..."
           
-          # Remove first line (the topic we just processed)
-          # Keep comments and empty lines, remove the first non-comment non-empty line
+          # 删除第一行（已处理的主题）
           awk '
             BEGIN { removed = 0 }
             /^#/ { print; next }
@@ -182,44 +141,19 @@ HTMLEOF
           
           mv content_plan.txt.tmp content_plan.txt
           
-          echo "✅ Removed processed topic from content_plan.txt"
-          echo "📊 Remaining topics:"
-          grep -v '^#' content_plan.txt | grep -v '^$' | wc -l
+          echo "Cleaned content_plan.txt"
       
-      - name: Commit and Push All Changes
+      - name: Commit and Push
         if: steps.topic.outputs.slug != ''
         run: |
-          echo "🚀 Pushing all changes to GitHub..."
-          
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Add all changed files
           git add blog/*.html
           git add blog/articles.json
           git add content_plan.txt
           
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "⚠️  No changes to commit"
-            exit 0
-          fi
-          
-          # Commit with detailed message
-          git commit -m "🤖 Auto-generate blog post
-
-Topic: ${{ steps.topic.outputs.TOPIC }}
-Slug: ${{ steps.topic.outputs.SLUG }}
-
-Changes:
-- Created blog post HTML
-- Updated articles.json
-- Cleaned content_plan.txt
-
-Generated by GitHub Actions + Gemini AI"
-          
-          # Push to remote
+          git commit -m "🤖 Auto-generate: ${{ steps.topic.outputs.TOPIC }}" || echo "No changes"
           git push
           
-          echo "✅ Successfully pushed to GitHub!"
-          echo "🎉 Blog post generated and published!"
+          echo "Pushed to GitHub!"
