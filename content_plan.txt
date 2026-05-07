@@ -1,0 +1,14 @@
+# 博客文章内容计划
+# 每行一个文章标题，# 开头的是注释
+# 脚本会按顺序生成这些主题的专业博文
+
+How to Choose the Right Cable Lugs for Your Industrial Project
+Understanding IEC 61238 Standards for Electrical Connections
+Best Practices for Crimping Copper-Aluminum Bimetallic Terminals
+The Complete Guide to Insulated vs Non-Insulated Terminals
+10 Common Mistakes in Cable Termination and How to Avoid Them
+Quality Assurance in Electrical Fittings Manufacturing: An Inside Look
+How to Verify Supplier Certifications: ISO, UL, CE Explained
+Cable Management Solutions for Industrial Power Distribution
+The Role of Tin Plating in Preventing Connector Oxidation
+Exporting Electrical Components: Packaging and Shipping Best Practices

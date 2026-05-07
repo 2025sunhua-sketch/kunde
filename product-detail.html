@@ -24,7 +24,7 @@
         <a href="mailto:kundelec@126.com">kundelec@126.com</a>
         <a href="tel:+8613566954989">+86-13566954989</a>
       </div>
-      <button class="mobile-menu-toggle">鈽?/button>
+      <button class="mobile-menu-toggle">閳?/button>
     </div>
   </header>
 
@@ -45,7 +45,7 @@
   <section class="product-detail-section">
     <div class="container">
       <div style="margin-bottom: 32px;">
-        <a href="javascript:history.back()" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">鈫?Back</a>
+        <a href="javascript:history.back()" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">閳?Back</a>
       </div>
 
       <div id="loading" style="text-align: center; padding: 60px; color: var(--text-muted);">Loading product...</div>
@@ -117,14 +117,14 @@
   </footer>
 
   <script>
-    // 浜у搧绫诲埆閰嶇疆锛堟枃浠跺す鍚嶇О锛屽甫绌烘牸锛?    const CATEGORIES = {
+    // 娴溠冩惂缁鍩嗛柊宥囩枂閿涘牊鏋冩禒璺恒仚閸氬秶袨閿涘苯鐢粚鐑樼壐閿?    const CATEGORIES = {
       1: '1 Cable Lugs and Connectors',
       2: '2 Insulated Terminals',
       3: '3 Cable Clamps'
     };
 
-    // 椤甸潰鍔犺浇瀹屾垚鍚庢墽琛?    document.addEventListener('DOMContentLoaded', async function() {
-      // 浠?URL 鑾峰彇鍙傛暟
+    // 妞ょ敻娼伴崝鐘烘祰鐎瑰本鍨氶崥搴㈠⒔鐞?    document.addEventListener('DOMContentLoaded', async function() {
+      // 娴?URL 閼惧嘲褰囬崣鍌涙殶
       const urlParams = new URLSearchParams(window.location.search);
       const categoryId = parseInt(urlParams.get('category'));
       const productFolder = urlParams.get('product');
@@ -144,7 +144,7 @@
       }
       
       try {
-        // 鍔犺浇 product-list.json
+        // 閸旂姾娴?product-list.json
         const jsonPath = `images/products/product/${categoryFolder}/product-list.json`;
         console.log('Loading JSON:', jsonPath);
         
@@ -156,7 +156,7 @@
         const products = await response.json();
         console.log('Loaded', products.length, 'products');
         
-        // 鏌ユ壘瀵瑰簲鐨勪骇鍝?        const product = products.find(p => p.folder === productFolder);
+        // 閺屻儲澹樼€电懓绨查惃鍕獓閸?        const product = products.find(p => p.folder === productFolder);
         
         if (!product) {
           throw new Error(`Product "${productFolder}" not found`);
@@ -164,14 +164,13 @@
         
         console.log('Found product:', product.name);
         
-        // 鏋勫缓鍩虹璺緞
-        const basePath = `images/products/product/${categoryFolder}/${product.folder}/`;
+        // 閺嬪嫬缂撻崺铏诡攨鐠侯垰绶?        const basePath = `images/products/product/${categoryFolder}/${product.folder}/`;
         console.log('Base path:', basePath);
         
-        // 鏄剧ず浜у搧鏍囬
+        // 閺勫墽銇氭禍褍鎼ч弽鍥暯
         document.getElementById('productTitle').textContent = product.name;
         
-        // 鏄剧ず涓诲浘锛堢涓€寮狅級
+        // 閺勫墽銇氭稉璇叉禈閿涘牏顑囨稉鈧鐙呯礆
         if (product.images && product.images.length > 0) {
           const mainImagePath = basePath + product.images[0];
           console.log('Main image:', mainImagePath);
@@ -180,7 +179,7 @@
           mainImage.src = mainImagePath;
           mainImage.alt = product.name;
           
-          // 鏄剧ず缂╃暐鍥?          const thumbnailContainer = document.getElementById('thumbnailContainer');
+          // 閺勫墽銇氱紓鈺冩殣閸?          const thumbnailContainer = document.getElementById('thumbnailContainer');
           thumbnailContainer.innerHTML = product.images.map((img, index) => {
             const imgPath = basePath + img;
             return `
@@ -191,7 +190,7 @@
           }).join('');
         }
         
-        // 鏄剧ず璇︽儏鍥?        if (product.detailImage) {
+        // 閺勫墽銇氱拠锔藉剰閸?        if (product.detailImage) {
           const detailImagePath = basePath + product.detailImage;
           console.log('Detail image:', detailImagePath);
           
@@ -200,7 +199,7 @@
           detailImage.alt = product.name + ' - Specifications';
         }
         
-        // 闅愯棌鍔犺浇锛屾樉绀哄唴瀹?        document.getElementById('loading').style.display = 'none';
+        // 闂呮劘妫岄崝鐘烘祰閿涘本妯夌粈鍝勫敶鐎?        document.getElementById('loading').style.display = 'none';
         document.getElementById('productContent').style.display = 'grid';
         
       } catch (error) {
@@ -209,7 +208,7 @@
       }
     });
     
-    // 鍒囨崲涓诲浘
+    // 閸掑洦宕叉稉璇叉禈
     function changeImage(imageSrc, thumbnail) {
       document.getElementById('mainImage').src = imageSrc;
       document.querySelectorAll('[onclick^="changeImage"]').forEach(t => t.style.borderColor = 'transparent');
