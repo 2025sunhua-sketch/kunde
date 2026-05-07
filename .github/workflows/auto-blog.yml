@@ -68,18 +68,27 @@ jobs:
           with open(filename, 'w', encoding='utf-8') as f:
               f.write(html)
 
-          # 4. 更新计划书和首页
+          # 4. 更新计划书
           with open(plan_path, 'w', encoding='utf-8') as f:
               f.writelines(remaining)
 
-          index_path = 'index.html'
-          if os.path.exists(index_path):
-              with open(index_path, 'r', encoding='utf-8') as f:
+          # 5. 精准更新 vlog 目录下的 index.html
+          vlog_index_path = 'vlog/index.html'
+          if os.path.exists(vlog_index_path):
+              with open(vlog_index_path, 'r', encoding='utf-8') as f:
                   idx_html = f.read()
-              new_link = f'\n\n<a href=\"{filename}\" class=\"blog-card\"><h2>{topic}</h2><p>Published on {date_str}</p></a>'
-              idx_html = idx_html.replace('', new_link)
-              with open(index_path, 'w', encoding='utf-8') as f:
-                  f.write(idx_html)
+              
+              # 构建符合你 vlog 页面样式的 HTML 块
+              # 注意：因为文章在 blog/ 文件夹，从 vlog/ 进去需要用 ../blog/ 路径
+              new_entry = f'\n<div class="vlog-item"><a href="../blog/{slug}.html">{topic}</a> <span>({date_str})</span></div>\n'
+              
+              if '<!-- Article List -->' in idx_html:
+                  idx_html = idx_html.replace('<!-- Article List -->', new_entry)
+                  with open(vlog_index_path, 'w', encoding='utf-8') as f:
+                      f.write(idx_html)
+                  print(f'✅ 已成功更新 {vlog_index_path}')
+              else:
+                  print('⚠️ 警告：在 vlog/index.html 中未找到 <!-- Article List --> 标记')
           
           print(f'Successfully generated {filename}')
           "
