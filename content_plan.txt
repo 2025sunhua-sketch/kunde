@@ -1,7 +1,7 @@
 # 博客文章内容计划
 # 每行一个文章标题，# 开头的是注释
 # 脚本会按顺序生成这些主题的专业博文
-Comparison of Forged vs Cast Aluminum Power Fittings
+The Role of Insulation Piercing Connectors in Modern Grids
 How to Specify Cable Lugs in Engineering Drawings: Tolerances, Material Codes, and Procurement Notes
 Understanding IEC 61238 Standards for Electrical Connections: A Field Engineer's Checklist
 Best Practices for Crimping Copper-Aluminum Bimetallic Terminals
