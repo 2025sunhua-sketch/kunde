@@ -2,13 +2,33 @@
 # 每行一个文章标题，# 开头的是注释
 # 脚本会按顺序生成这些主题的专业博文
 
-How to Choose the Right Cable Lugs for Your Industrial Project
-Understanding IEC 61238 Standards for Electrical Connections
+How to Specify Cable Lugs in Engineering Drawings: Tolerances, Material Codes, and Procurement Notes
+Understanding IEC 61238 Standards for Electrical Connections: A Field Engineer's Checklist
 Best Practices for Crimping Copper-Aluminum Bimetallic Terminals
-The Complete Guide to Insulated vs Non-Insulated Terminals
-10 Common Mistakes in Cable Termination and How to Avoid Them
-Quality Assurance in Electrical Fittings Manufacturing: An Inside Look
-How to Verify Supplier Certifications: ISO, UL, CE Explained
-Cable Management Solutions for Industrial Power Distribution
-The Role of Tin Plating in Preventing Connector Oxidation
-Exporting Electrical Components: Packaging and Shipping Best Practices
+DTL-1 vs. DTL-2 Bimetallic Cable Lugs: Which Spec Fits Your Project Voltage Level?
+Tin-Plated vs. Bare Copper Terminals: A 5-Year Corrosion Resistance Comparison
+What Is T2 Copper? Conductivity, Purity Standards, and Why It Matters for High-Current Connections
+Cable Lug Size Chart: How to Match Lug to Cable Cross-Section (10mm² to 630mm²)
+Why Do Electrical Connections Overheat? The 3 Root Causes and How to Fix Them
+Galvanic Corrosion in Electrical Systems: How Bimetallic Lugs Prevent Catastrophic Failures
+High-Temperature Environments and Cable Terminals: What Changes Above 75°C?
+How Tin Plating Extends the Service Life of Copper Terminals in Coastal and Chemical Plants
+The Hidden Cost of Cheap Cable Lugs: A Maintenance Engineer's Real-World Breakdown
+Aluminum Cable in a Copper-Dominated Grid: Why the Connection Point Is Your Biggest Risk
+IEC 61238-1 vs. DIN 46235: Which Compression Lug Standard Should Your Project Follow?
+CE Marking for Cable Lugs: What Importers in the EU Need to Verify Before Customs
+RoHS Compliance in Copper Terminals: What Tin-Plating Formulas Are Allowed?
+How to Read a Cable Lug Datasheet: 7 Parameters That Actually Matter on Site
+Cable Lugs for Solar Power Plants: Why Standard Residential Lugs Fail in Utility-Scale PV Systems
+Power Fittings for Wind Energy: Corrosion Resistance Requirements in Offshore Applications
+Substation Bus Bar Connections: Copper Terminal Selection Guide for 11kV to 110kV Systems
+EV Charging Infrastructure: Why High-Conductivity Copper Lugs Are Non-Negotiable for DC Fast Chargers
+Industrial Panel Board Wiring: Matching Terminal Blocks and Cable Lugs for 400A+ Applications
+How to Source Power Fittings from Yiwu: A Step-by-Step Guide for First-Time Importers
+OEM Cable Lugs from China: 5 Quality Checkpoints Before You Place a Bulk Order
+MOQ, Lead Time, and Customization: What to Expect When Ordering Power Fittings from a Yiwu Manufacturer
+How to Verify Copper Purity in Cable Lugs: 3 Tests You Can Do Before Accepting a Shipment
+Binwang Market Electrical Fittings District: The Sourcing Hub That Powers Global Infrastructure Projects
+Why Bimetallic Lugs Are the Only Safe Solution When Aluminum Cables Meet Copper Busbars
+Heavy-Duty Copper Terminals for Industrial Applications: T2 Copper vs. Brass
+Custom Power Fittings from Yiwu Binwang Market: How We Deliver Samples in 7 Days
