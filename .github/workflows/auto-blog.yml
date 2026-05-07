@@ -24,7 +24,7 @@ jobs:
           import os, requests, json, re
           from datetime import datetime
 
-          # 1. 读取标题
+          # 1. 获取标题
           plan_path = 'content_plan.txt'
           if not os.path.exists(plan_path): exit(0)
           with open(plan_path, 'r', encoding='utf-8') as f:
@@ -41,7 +41,7 @@ jobs:
           if not topic:
               print('No topic found'); exit(0)
 
-          # 2. 调用 Gemini API
+          # 2. 调用 AI
           api_key = os.getenv('GEMINI_API_KEY')
           url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}'
           prompt = f'Write a professional 800-word blog article about: {topic} for the power fittings industry. Use HTML tags like <h2>, <p>, <ul>. Write in English.'
@@ -53,7 +53,7 @@ jobs:
           except Exception as e:
               ai_content = f'<p>Generation failed: {str(e)}</p>'
 
-          # 3. 生成 HTML 文件
+          # 3. 生成文章
           slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')
           filename = f'blog/{slug}.html'
           date_str = datetime.now().strftime('%Y-%m-%d')
@@ -63,23 +63,24 @@ jobs:
           
           final_html = html.replace('{{TITLE}}', topic).replace('{{DATE}}', date_str).replace('{{CONTENT}}', ai_content)
           
-          os.makedirs('blog', exist_ok=True)
           with open(filename, 'w', encoding='utf-8') as f:
               f.write(final_html)
 
-          # 4. 更新计划书和 vlog 目录下的 index.html
+          # 4. 精准更新 blog/index.html
           with open(plan_path, 'w', encoding='utf-8') as f:
               f.writelines(remaining)
 
-          vlog_idx = 'vlog/index.html'
-          if os.path.exists(vlog_idx):
-              with open(vlog_idx, 'r', encoding='utf-8') as f:
+          blog_idx = 'blog/index.html'
+          if os.path.exists(blog_idx):
+              with open(blog_idx, 'r', encoding='utf-8') as f:
                   idx_html = f.read()
-              # 链接前缀加 ../ 指向 blog 文件夹
-              new_link = f'\n<a href=\"../{filename}\" class=\"vlog-card\"><h2>{topic}</h2><p>Published on {date_str}</p></a>\n'
+              
+              # 生成符合 blog 页面结构的链接 (注意：这里是在同一文件夹下，无需加 ../)
+              new_entry = f'\n<div class=\"post-item\"><a href=\"{slug}.html\">{topic}</a> <span>({date_str})</span></div>\n'
+              
               if '' in idx_html:
-                  idx_html = idx_html.replace('', new_link)
-                  with open(vlog_idx, 'w', encoding='utf-8') as f:
+                  idx_html = idx_html.replace('', new_entry)
+                  with open(blog_idx, 'w', encoding='utf-8') as f:
                       f.write(idx_html)
           "
 
@@ -88,5 +89,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "🤖 自动生成博文并更新Vlog" || echo "No changes"
+          git commit -m "🤖 自动生成博文并更新目录" || echo "No changes"
           git push
