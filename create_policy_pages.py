@@ -1,0 +1,576 @@
+import os
+
+workspace = r"C:\Users\ADMIN\.jvs\.openclaw\workspace\kunde-website"
+
+# Privacy Policy 页面内容
+privacy_policy_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Privacy Policy | KDELEC</title>
+  <meta name="description" content="KDELEC Privacy Policy - Learn how we collect, use, and protect your information when you visit our website or submit an inquiry.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://kdelec.com/privacy-policy.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kdelec.com/privacy-policy.html">
+  <meta property="og:title" content="Privacy Policy | KDELEC">
+  <meta property="og:description" content="KDELEC Privacy Policy - Information collection, usage, and protection practices.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile-optimized.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBP1X70205"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GBP1X70205');
+  </script>
+  
+  <style>
+    .policy-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .policy-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .policy-header h1 {
+      font-size: 42px;
+      color: #1a3d6e;
+      margin-bottom: 16px;
+    }
+    
+    .policy-content {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    
+    .policy-content h2 {
+      font-size: 24px;
+      color: #1a3d6e;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    
+    .policy-content p {
+      color: #333;
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .policy-content ul {
+      margin: 12px 0 16px 20px;
+      padding-left: 0;
+    }
+    
+    .policy-content li {
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    
+    .last-updated {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+    
+    @media (max-width: 768px) {
+      .policy-header h1 {
+        font-size: 32px;
+      }
+      
+      .policy-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+      <div>
+        <span>English</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Header Main -->
+  <header class="header-main">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="KUNDE ELECTRIC">
+      </a>
+      <div class="header-contact">
+        <a href="mailto:sales@kdelec.com">sales@kdelec.com</a>
+        <a href="tel:+8613566954989">+86-13566954989</a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+  
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="products.html">PRODUCT</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="production.html">PRODUCTION LINE</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Your privacy is important to us</p>
+    </div>
+  </section>
+  
+  <!-- Policy Content -->
+  <main class="policy-container">
+    <p class="last-updated">Last updated: September 2026</p>
+    
+    <div class="policy-content">
+      <p>KDELEC ("we", "us", or "our") operates the website https://kdelec.com (the "Site"). This Privacy Policy explains how we collect, use, and protect your information when you visit our Site or submit an inquiry.</p>
+      
+      <h2>1. Information We Collect</h2>
+      <ul>
+        <li><strong>Information you provide:</strong> name, company, email address, phone number, and message content when you submit a contact or inquiry form.</li>
+        <li><strong>Information collected automatically:</strong> IP address, browser type, device information, pages visited, and time spent on pages, collected through cookies and similar tracking technologies.</li>
+      </ul>
+      
+      <h2>2. How We Use Your Information</h2>
+      <ul>
+        <li>To respond to your inquiries and provide product information.</li>
+        <li>To communicate with you regarding your requests and potential business cooperation.</li>
+        <li>To analyze website traffic and improve our Site using analytics tools such as Google Analytics.</li>
+        <li>To display relevant advertising through Google Ads.</li>
+      </ul>
+      
+      <h2>3. Cookies and Tracking Technologies</h2>
+      <p>We use cookies and similar technologies to understand how visitors use our Site and to measure the effectiveness of our advertising. Third-party vendors, including Google, use cookies to serve ads based on your prior visits. You may opt out of personalized advertising at <a href="https://adssettings.google.com" target="_blank" style="color: #1a3d6e;">https://adssettings.google.com</a>.</p>
+      
+      <h2>4. Third-Party Services</h2>
+      <p>We use the following third-party services that may collect information:</p>
+      <ul>
+        <li><strong>Google Analytics:</strong> for website traffic analysis.</li>
+        <li><strong>Google Ads:</strong> for advertising and conversion measurement.</li>
+      </ul>
+      <p>These services have their own privacy policies governing the use of your information.</p>
+      
+      <h2>5. Data Sharing</h2>
+      <p>We do not sell your personal information. We only share data with trusted service providers (such as Google) strictly for the purposes described above, or when required by law.</p>
+      
+      <h2>6. Data Security</h2>
+      <p>We take reasonable measures to protect your information from unauthorized access, alteration, or disclosure. However, no method of transmission over the Internet is 100% secure.</p>
+      
+      <h2>7. Your Rights</h2>
+      <p>Depending on your location, you may have the right to access, correct, or delete your personal data. To exercise these rights, please contact us using the details below.</p>
+      
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised "Last updated" date.</p>
+      
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+      <p style="padding: 16px; background: #f8f9fa; border-left: 4px solid #1a3d6e; margin-top: 12px;">
+        <strong>Email:</strong> sales@kdelec.com<br>
+        <strong>Website:</strong> <a href="https://kdelec.com" style="color: #1a3d6e;">https://kdelec.com</a>
+      </p>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About Us</h4>
+          <p>KUNDE ELECTRIC specializes in R&D, manufacturing and distribution of high-quality power fittings with over 12 years of industry experience.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Request Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-info">
+            <p><strong>Address:</strong> A0-033~035, Binwang Market, Yiwu, Zhejiang, China</p>
+            <p><strong>Tel:</strong> <a href="tel:+8613566954989">+86-13566954989</a></p>
+            <p><strong>Email:</strong> <a href="mailto:sales@kdelec.com">sales@kdelec.com</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/8613566954989">+86-13566954989</a></p>
+            <p><strong>WeChat:</strong> +86-13566954989</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">F</a>
+            <a href="#" aria-label="Twitter">T</a>
+            <a href="#" aria-label="YouTube">Y</a>
+            <div class="footer-wechat">
+              <img src="images/wechat-qr.jpg" alt="WeChat QR Code">
+              <span>Scan to Add WeChat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p>
+        <p style="margin-top: 8px; font-size: 14px;">
+          <a href="privacy-policy.html" style="color: #ccc; margin-right: 16px;">Privacy Policy</a>
+          <a href="warranty-policy.html" style="color: #ccc;">Warranty & After-sales Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Mobile Contact Bar -->
+  <div class="mobile-contact-bar">
+    <div class="container">
+      <button class="wechat-qr-trigger" onclick="document.getElementById('wechatModal').classList.add('active')">WeChat</button>
+      <a href="products.html">Products</a>
+      <a href="tel:+8613566954989">Call</a>
+      <a href="https://wa.me/8613566954989">WhatsApp</a>
+      <a href="contact.html">Inquiry</a>
+    </div>
+  </div>
+  
+  <!-- WeChat QR Modal -->
+  <div id="wechatModal" class="wechat-modal" onclick="if(event.target === this) this.classList.remove('active')">
+    <div class="wechat-modal-content">
+      <button class="wechat-modal-close" onclick="document.getElementById('wechatModal').classList.remove('active')">&times;</button>
+      <img src="images/wechat-qr.jpg" alt="WeChat QR Code">
+      <h3>Scan to Add WeChat</h3>
+      <p>Or search: +86-13566954989</p>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>'''
+
+# Warranty Policy 页面内容
+warranty_policy_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Warranty & After-sales Policy | KDELEC</title>
+  <meta name="description" content="KDELEC Warranty and After-sales Policy - Learn about our product warranty, quality assurance, returns process, and technical support for B2B partners.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://kdelec.com/warranty-policy.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kdelec.com/warranty-policy.html">
+  <meta property="og:title" content="Warranty & After-sales Policy | KDELEC">
+  <meta property="og:description" content="KDELEC product warranty, quality assurance, and after-sales support policy for B2B partners.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile-optimized.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBP1X70205"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GBP1X70205');
+  </script>
+  
+  <style>
+    .policy-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .policy-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .policy-header h1 {
+      font-size: 42px;
+      color: #1a3d6e;
+      margin-bottom: 16px;
+    }
+    
+    .policy-content {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    
+    .policy-content h2 {
+      font-size: 24px;
+      color: #1a3d6e;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    
+    .policy-content p {
+      color: #333;
+      line-height: 1.8;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .policy-content ul {
+      margin: 12px 0 16px 20px;
+      padding-left: 0;
+    }
+    
+    .policy-content li {
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    
+    .last-updated {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 32px;
+    }
+    
+    @media (max-width: 768px) {
+      .policy-header h1 {
+        font-size: 32px;
+      }
+      
+      .policy-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+      <div>
+        <span>English</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Header Main -->
+  <header class="header-main">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="KUNDE ELECTRIC">
+      </a>
+      <div class="header-contact">
+        <a href="mailto:sales@kdelec.com">sales@kdelec.com</a>
+        <a href="tel:+8613566954989">+86-13566954989</a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+  
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="products.html">PRODUCT</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="production.html">PRODUCTION LINE</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Warranty & After-sales Policy</h1>
+      <p>Our commitment to quality and customer support</p>
+    </div>
+  </section>
+  
+  <!-- Policy Content -->
+  <main class="policy-container">
+    <p class="last-updated">Last updated: September 2026</p>
+    
+    <div class="policy-content">
+      <p>Thank you for choosing KDELEC. As a B2B manufacturer and supplier of electrical and electronic products, we are committed to providing reliable products and professional after-sales support to our business partners.</p>
+      
+      <h2>1. Product Warranty</h2>
+      <p>All KDELEC products are manufactured under strict quality control and come with a standard warranty against defects in materials and workmanship under normal use. The specific warranty period and terms are subject to the quotation, contract, or order confirmation agreed upon between KDELEC and the customer.</p>
+      
+      <h2>2. Quality Assurance</h2>
+      <p>Every product is inspected before shipment to ensure it meets the agreed specifications. We welcome customers to arrange third-party inspection prior to delivery if required.</p>
+      
+      <h2>3. Returns & Replacements</h2>
+      <p>As a B2B supplier, we do not operate a standard online return process. Return or replacement requests are handled on a case-by-case basis according to the terms of the relevant order:</p>
+      <ul>
+        <li>If a product is found to be defective or damaged upon arrival, please contact our sales team within 7 days of receipt with photos or videos as evidence.</li>
+        <li>Upon verification, we will arrange repair, replacement, or other appropriate solutions in accordance with the agreed terms.</li>
+        <li>Returns due to customer ordering errors (wrong model, specification, or quantity) are subject to prior approval and may incur restocking or shipping fees.</li>
+      </ul>
+      
+      <h2>4. Technical Support</h2>
+      <p>Our engineering team provides technical consultation, installation guidance, and troubleshooting support for all products we supply. Please contact us with the product model and a description of the issue.</p>
+      
+      <h2>5. Shipping & Lead Time</h2>
+      <p>Shipping methods, lead times, and freight responsibilities are confirmed during the order process and stated in the proforma invoice or sales contract.</p>
+      
+      <h2>6. Contact Us</h2>
+      <p>For any warranty, return, or after-sales inquiry, please contact our sales team:</p>
+      <p style="padding: 16px; background: #f8f9fa; border-left: 4px solid #1a3d6e; margin-top: 12px;">
+        <strong>Email:</strong> sales@kdelec.com<br>
+        <strong>Website:</strong> <a href="https://kdelec.com" style="color: #1a3d6e;">https://kdelec.com</a>
+      </p>
+      <p>We typically respond within 1–2 business days.</p>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>About Us</h4>
+          <p>KUNDE ELECTRIC specializes in R&D, manufacturing and distribution of high-quality power fittings with over 12 years of industry experience.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Request Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-info">
+            <p><strong>Address:</strong> A0-033~035, Binwang Market, Yiwu, Zhejiang, China</p>
+            <p><strong>Tel:</strong> <a href="tel:+8613566954989">+86-13566954989</a></p>
+            <p><strong>Email:</strong> <a href="mailto:sales@kdelec.com">sales@kdelec.com</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/8613566954989">+86-13566954989</a></p>
+            <p><strong>WeChat:</strong> +86-13566954989</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">F</a>
+            <a href="#" aria-label="Twitter">T</a>
+            <a href="#" aria-label="YouTube">Y</a>
+            <div class="footer-wechat">
+              <img src="images/wechat-qr.jpg" alt="WeChat QR Code">
+              <span>Scan to Add WeChat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p>
+        <p style="margin-top: 8px; font-size: 14px;">
+          <a href="privacy-policy.html" style="color: #ccc; margin-right: 16px;">Privacy Policy</a>
+          <a href="warranty-policy.html" style="color: #ccc;">Warranty & After-sales Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Mobile Contact Bar -->
+  <div class="mobile-contact-bar">
+    <div class="container">
+      <button class="wechat-qr-trigger" onclick="document.getElementById('wechatModal').classList.add('active')">WeChat</button>
+      <a href="products.html">Products</a>
+      <a href="tel:+8613566954989">Call</a>
+      <a href="https://wa.me/8613566954989">WhatsApp</a>
+      <a href="contact.html">Inquiry</a>
+    </div>
+  </div>
+  
+  <!-- WeChat QR Modal -->
+  <div id="wechatModal" class="wechat-modal" onclick="if(event.target === this) this.classList.remove('active')">
+    <div class="wechat-modal-content">
+      <button class="wechat-modal-close" onclick="document.getElementById('wechatModal').classList.remove('active')">&times;</button>
+      <img src="images/wechat-qr.jpg" alt="WeChat QR Code">
+      <h3>Scan to Add WeChat</h3>
+      <p>Or search: +86-13566954989</p>
+    </div>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>'''
+
+# 写入文件
+with open(os.path.join(workspace, 'privacy-policy.html'), 'w', encoding='utf-8') as f:
+    f.write(privacy_policy_html)
+print("✅ Created: privacy-policy.html")
+
+with open(os.path.join(workspace, 'warranty-policy.html'), 'w', encoding='utf-8') as f:
+    f.write(warranty_policy_html)
+print("✅ Created: warranty-policy.html")
+
+print("\n🎉 Two policy pages created successfully!")
