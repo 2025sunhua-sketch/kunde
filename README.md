@@ -187,7 +187,7 @@ kunde-website/
 
 1. 在 Vercel Dashboard 进入项目
 2. 点击 "Domains"
-3. 添加你的域名（如 `www.kundeelectric.com`）
+3. 添加你的域名（如 `www.kdelec.com`）
 4. 按照提示配置 DNS 记录
 
 ## 📝 维护建议
