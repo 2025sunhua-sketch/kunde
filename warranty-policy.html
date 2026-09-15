@@ -33,90 +33,76 @@
     gtag('config', 'G-GBP1X70205');
   </script>
   
-  <style>
-    .policy-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    
-    .policy-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    
-    .policy-header h1 {
-      font-size: 42px;
-      color: #1a3d6e;
-      margin-bottom: 16px;
-    }
-    
-    .policy-content {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    }
-    
-    .policy-content h2 {
-      font-size: 24px;
-      color: #1a3d6e;
-      margin-top: 32px;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #e0e0e0;
-    }
-    
-    .policy-content p {
-      color: #333;
-      line-height: 1.8;
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
-    
-    .policy-content ul {
-      margin: 12px 0 16px 20px;
-      padding-left: 0;
-    }
-    
-    .policy-content li {
-      color: #333;
-      line-height: 1.8;
-      margin-bottom: 8px;
-    }
-    
-    .last-updated {
-      text-align: center;
-      color: #666;
-      font-style: italic;
-      margin-bottom: 32px;
-    }
-    
-    @media (max-width: 768px) {
-      .policy-header h1 {
-        font-size: 32px;
-      }
-      
-      .policy-content {
-        padding: 24px;
-      }
-    }
-  </style>
+  
+
+
+<style>
+/* Copy button: minimal emoji, always visible */
+.copy-email-btn { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: var(--primary-blue, #1a73e8); 
+  padding: 0 2px; 
+  font-size: 16px; 
+  line-height: 1; 
+  white-space: nowrap; 
+  margin-left: 4px; 
+  flex-shrink: 0;
+}
+.copy-email-btn:hover { opacity: 0.7; }
+.copy-email-btn.copied { color: #2e7d32; }
+.copy-email-btn .copy-text { display: none; }
+.copy-email-btn::before { content: "📋"; }
+.copy-email-btn.copied::before { content: "✓"; }
+
+/* Header contact: simple flex, allow wrap only on very narrow screens */
+.header-contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  overflow: visible !important;
+  flex-wrap: wrap !important;
+}
+
+/* On narrow screens (< 480px), stack email+button above phone */
+@media (max-width: 480px) {
+  .header-contact {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .header-contact > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+}
+</style>
+
+<style>
+/* Copy button: show [Copy] text on desktop, CSS icon on mobile */
+.copy-email-btn { transition: background 0.15s; }
+.copy-email-btn:hover { background: rgba(26,115,232,0.08); }
+.copy-email-btn.copied { border-color: #2e7d32; color: #2e7d32; }
+.copy-email-btn .copy-text { display: inline; }
+@media (max-width: 768px) {
+  .copy-email-btn { padding: 0; min-width: auto; font-size: 16px; }
+  .copy-email-btn .copy-text { display: none; }
+  .copy-email-btn::before {
+    content: "📋";
+    font-size: 14px;
+    line-height: 1;
+  }
+  .copy-email-btn.copied::before { content: "✓"; }
+}
+</style>
 </head>
 <body>
   <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="social-links">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Twitter">Twitter</a>
-        <a href="#" aria-label="YouTube">YouTube</a>
-      </div>
-      <div>
-        <span>English</span>
-      </div>
-    </div>
-  </div>
+  
   
   <!-- Header Main -->
   <header class="header-main">
@@ -124,10 +110,10 @@
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="KUNDE ELECTRIC">
       </a>
-      <div class="header-contact">
-        <a href="mailto:sales@kdelec.com">sales@kdelec.com</a>
-        <a href="tel:+8613566954989">+86-13566954989</a>
-      </div>
+      <div class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1;"> <div style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+            <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </div> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a> </div>
       <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     </div>
   </header>
@@ -222,19 +208,11 @@
           <h4>Contact Us</h4>
           <div class="footer-contact-info">
             <p><strong>Address:</strong> A0-033~035, Binwang Market, Yiwu, Zhejiang, China</p>
-            <p><strong>Tel:</strong> <a href="tel:+8613566954989">+86-13566954989</a></p>
+            <p><strong>Tel:</strong> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a></p>
             <p><strong>Email:</strong> <a href="mailto:sales@kdelec.com">sales@kdelec.com</a></p>
             <p><strong>WhatsApp:</strong> <a href="https://wa.me/8613566954989">+86-13566954989</a></p>
             <p><strong>WeChat:</strong> +86-13566954989</p>
           </div>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook">F</a>
-            <a href="#" aria-label="Twitter">T</a>
-            <a href="#" aria-label="YouTube">Y</a>
-            <div class="footer-wechat">
-              <img src="images/wechat-qr.jpg" alt="WeChat QR Code" loading="lazy" decoding="async">
-              <span>Scan to Add WeChat</span>
-            </div>
           </div>
         </div>
       </div>

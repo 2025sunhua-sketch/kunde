@@ -73,53 +73,76 @@
   }
   </script>
   
-  <style>
-    .article-container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-    .article-header { margin-bottom: 40px; }
-    .article-meta { font-size: 14px; color: #999; margin-bottom: 16px; }
-    .article-meta span { margin-right: 16px; }
-    .article-title { font-size: 42px; color: #1a3d6e; margin: 0 0 24px 0; line-height: 1.3; }
-    .article-content { font-size: 18px; line-height: 1.8; color: #333; }
-    .article-content h2 { font-size: 28px; color: #1a3d6e; margin: 40px 0 20px 0; }
-    .article-content h3 { font-size: 22px; color: #1a3d6e; margin: 32px 0 16px 0; }
-    .article-content p { margin: 20px 0; }
-    .article-content ul, .article-content ol { margin: 20px 0; padding-left: 24px; }
-    .article-content li { margin: 12px 0; }
-    .article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 24px 0; }
-    .article-content blockquote { border-left: 4px solid #1a3d6e; padding-left: 24px; margin: 32px 0; font-style: italic; color: #666; }
-    .article-footer { margin-top: 60px; padding-top: 40px; border-top: 2px solid #e0e0e0; }
-    .geo-cta { background: linear-gradient(135deg, #1a3d6e 0%, #2c5aa0 100%); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 40px; }
-    .geo-cta h3 { font-size: 24px; margin: 0 0 16px 0; color: white; }
-    .geo-cta p { font-size: 16px; margin: 0 0 24px 0; opacity: 0.95; }
-    .geo-cta .address { display: inline-block; padding: 16px 24px; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 15px; }
-    .geo-cta .address strong { display: block; margin-bottom: 8px; }
-    .back-to-blog { display: inline-block; color: #1a3d6e; text-decoration: none; font-weight: 600; margin-bottom: 24px; }
-    .back-to-blog:hover { text-decoration: underline; }
-    .highlight-box { background: #f0f5ff; border-left: 4px solid #1a3d6e; padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 28px 0; }
-    .highlight-box p { margin: 0; color: #1a3d6e; font-weight: 500; }
-    .process-steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 28px 0; }
-    .process-steps li { counter-increment: step-counter; display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; padding: 20px; background: #f8f9ff; border-radius: 8px; }
-    .process-steps li::before { content: counter(step-counter); display: flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; background: #1a3d6e; color: white; border-radius: 50%; font-weight: 700; font-size: 16px; }
-    .process-steps li .step-content strong { display: block; font-size: 17px; color: #1a3d6e; margin-bottom: 6px; }
-    .process-steps li .step-content p { margin: 0; font-size: 16px; color: #555; }
-    @media (max-width: 768px) {
-      .article-title { font-size: 32px; }
-      .article-content { font-size: 16px; }
-    }
-  </style>
+  
+
+
+<style>
+/* Copy button: minimal emoji, always visible */
+.copy-email-btn { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: var(--primary-blue, #1a73e8); 
+  padding: 0 2px; 
+  font-size: 16px; 
+  line-height: 1; 
+  white-space: nowrap; 
+  margin-left: 4px; 
+  flex-shrink: 0;
+}
+.copy-email-btn:hover { opacity: 0.7; }
+.copy-email-btn.copied { color: #2e7d32; }
+.copy-email-btn .copy-text { display: none; }
+.copy-email-btn::before { content: "📋"; }
+.copy-email-btn.copied::before { content: "✓"; }
+
+/* Header contact: simple flex, allow wrap only on very narrow screens */
+.header-contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  overflow: visible !important;
+  flex-wrap: wrap !important;
+}
+
+/* On narrow screens (< 480px), stack email+button above phone */
+@media (max-width: 480px) {
+  .header-contact {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .header-contact > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+}
+</style>
+
+<style>
+/* Copy button: show [Copy] text on desktop, CSS icon on mobile */
+.copy-email-btn { transition: background 0.15s; }
+.copy-email-btn:hover { background: rgba(26,115,232,0.08); }
+.copy-email-btn.copied { border-color: #2e7d32; color: #2e7d32; }
+.copy-email-btn .copy-text { display: inline; }
+@media (max-width: 768px) {
+  .copy-email-btn { padding: 0; min-width: auto; font-size: 16px; }
+  .copy-email-btn .copy-text { display: none; }
+  .copy-email-btn::before {
+    content: "📋";
+    font-size: 14px;
+    line-height: 1;
+  }
+  .copy-email-btn.copied::before { content: "✓"; }
+}
+</style>
 </head>
 <body>
   <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="social-links">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Twitter">Twitter</a>
-        <a href="#" aria-label="YouTube">YouTube</a>
-      </div>
-      <div><span>English</span></div>
-    </div>
-  </div>
+  
 
   <!-- Header Main -->
   <header class="header-main">
@@ -127,10 +150,10 @@
       <a href="../index.html" class="logo">
         <img src="../images/logo.png" alt="KUNDE ELECTRIC">
       </a>
-      <div class="header-contact">
-        <a href="mailto:sales@kdelec.com">sales@kdelec.com</a>
-        <a href="tel:+8613566954989">+86-13566954989</a>
-      </div>
+      <div class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1;"> <div style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+            <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </div> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a> </div>
       <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     </div>
   </header>
@@ -327,7 +350,7 @@
           <h4>Contact Us</h4>
           <div class="footer-contact-info">
             <p><strong>Address:</strong> A0-033~035, Binwang Market, Yiwu, Zhejiang, China</p>
-            <p><strong>Tel:</strong> <a href="tel:+8613566954989">+86-13566954989</a></p>
+            <p><strong>Tel:</strong> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a></p>
             <p><strong>Email:</strong> <a href="mailto:sales@kdelec.com">sales@kdelec.com</a></p>
           </div>
         </div>

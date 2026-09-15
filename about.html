@@ -37,21 +37,59 @@
  
  <!-- Font Awesome Icons -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+<style>
+/* Copy button: minimal emoji, always visible */
+.copy-email-btn { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: var(--primary-blue, #1a73e8); 
+  padding: 0 2px; 
+  font-size: 16px; 
+  line-height: 1; 
+  white-space: nowrap; 
+  margin-left: 4px; 
+  flex-shrink: 0;
+}
+.copy-email-btn:hover { opacity: 0.7; }
+.copy-email-btn.copied { color: #2e7d32; }
+.copy-email-btn .copy-text { display: none; }
+.copy-email-btn::before { content: "📋"; }
+.copy-email-btn.copied::before { content: "✓"; }
+
+/* Header contact: simple flex, allow wrap only on very narrow screens */
+.header-contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  overflow: visible !important;
+  flex-wrap: wrap !important;
+}
+
+/* On narrow screens (< 480px), stack email+button above phone */
+@media (max-width: 480px) {
+  .header-contact {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .header-contact > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+}
+</style>
 </head>
 <body>
  <!-- Top Bar -->
- <div class="top-bar">
- <div class="container">
- <div class="social-links">
- <a href="#" aria-label="Facebook">Facebook</a>
- <a href="#" aria-label="Twitter">Twitter</a>
- <a href="#" aria-label="YouTube">YouTube</a>
- </div>
- <div>
- <span>English</span>
- </div>
- </div>
- </div>
+ 
 
  <!-- Header Main -->
  <header class="header-main">
@@ -59,16 +97,10 @@
  <a href="index.html" class="logo">
  <img src="images/logo.png" alt="KUNDE ELECTRIC">
  </a>
- <div class="header-contact">
- <a href="mailto:sales@kdelec.com"><span class="email-with-copy" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+ <div class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1;"> <div style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
             <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
-            <button type="button" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.innerHTML='<i class=&quot;fas fa-check&quot;></i>'; setTimeout(()=>this.innerHTML='<i class=&quot;far fa-copy&quot;></i>', 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 2px 4px; font-size: 13px; line-height: 1;" title="Copy email address" aria-label="Copy email address"><i class="far fa-copy"></i></button>
-          </span></a>
- <a href="tel:+8613566954989">+86-13566954989</a>
- </div>
- <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
- </div>
- </header>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </div> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a> </div></header>
 
  <!-- Navigation Bar -->
  <nav class="nav-bar">
@@ -187,21 +219,13 @@
  <h4>Contact Us</h4>
  <div class="footer-contact-info">
  <p><strong>Address:</strong> Yiwu Binwang Market A0-033~035</p>
- <p><strong>Tel:</strong> <a href="tel:+8613566954989">+86-13566954989</a></p>
- <p><strong>Email:</strong> <a href="mailto:sales@kdelec.com"><span class="email-with-copy" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+ <p><strong>Tel:</strong> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a></p>
+ <p><strong>Email:</strong> <a href="mailto:sales@kdelec.com" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="email-with-copy" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
             <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
-            <button type="button" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.innerHTML='<i class=&quot;fas fa-check&quot;></i>'; setTimeout(()=>this.innerHTML='<i class=&quot;far fa-copy&quot;></i>', 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 2px 4px; font-size: 13px; line-height: 1;" title="Copy email address" aria-label="Copy email address"><i class="far fa-copy"></i></button>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
           </span></a></p>
  <p><strong>WhatsApp:</strong> <a href="https://wa.me/8613566954989">+86-13566954989</a></p>
  <p><strong>WeChat:</strong> +86-13566954989</p>
- </div>
- <div class="footer-social">
- <a href="#" aria-label="Facebook">F</a>
- <a href="#" aria-label="Twitter">T</a>
- <a href="#" aria-label="YouTube">Y</a>
- <div class="footer-wechat">
- <img src="images/wechat-qr.jpg" alt="WeChat QR Code" loading="lazy" decoding="async">
- <span>Scan to Add WeChat</span>
  </div>
  </div>
  </div>
