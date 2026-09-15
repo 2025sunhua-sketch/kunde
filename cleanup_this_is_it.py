@@ -4,10 +4,10 @@ workspace = r"C:\Users\ADMIN\.jvs\.openclaw\workspace\kunde-website"
 os.chdir(workspace)
 
 # 删除自身
-script_path = os.path.join(workspace, "cleanup_i_mean_it.py")
+script_path = os.path.join(workspace, "cleanup_ok_seriously.py")
 if os.path.exists(script_path):
     os.remove(script_path)
-    print("Deleted: cleanup_i_mean_it.py")
+    print("Deleted: cleanup_ok_seriously.py")
 
 # Git add -A 并提交
 subprocess.run(["git", "add", "-A"], check=True)
