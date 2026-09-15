@@ -3,18 +3,16 @@ import os, subprocess
 workspace = r"C:\Users\ADMIN\.jvs\.openclaw\workspace\kunde-website"
 os.chdir(workspace)
 
-# 删除所有临时 .py 文件（保留项目正常脚本）
-temp_scripts = ["final_cleanup_and_push.py", "final_push.py"]
-for script in temp_scripts:
-    path = os.path.join(workspace, script)
-    if os.path.exists(path):
-        os.remove(path)
-        print(f"Deleted: {script}")
+# 删除自身
+script_path = os.path.join(workspace, "cleanup_final.py")
+if os.path.exists(script_path):
+    os.remove(script_path)
+    print("Deleted: cleanup_final.py")
 
 # Git add -A 并提交
 subprocess.run(["git", "add", "-A"], check=True)
 result = subprocess.run(
-    ["git", "commit", "-m", "chore: remove temporary push scripts"],
+    ["git", "commit", "-m", "chore: remove last temporary script"],
     capture_output=True, text=True
 )
 print("\n--- Git Commit ---")
@@ -29,4 +27,4 @@ print(result.stdout)
 if result.stderr:
     print(result.stderr)
 
-print("\nAll done! Workspace is clean.")
+print("\nWorkspace is fully clean. All done!")
