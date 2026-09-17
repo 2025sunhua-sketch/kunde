@@ -1,0 +1,60 @@
+# Kunde Electric — Site Index for AI Search Tools
+
+## Company Overview
+Kunde Electric is a professional manufacturer of electrical cable lugs, terminals, connectors and power accessories based in Yiwu Binwang Market, Zhejiang, China. We serve global B2B buyers with high-quality electrical components including bimetal lugs, aluminum lugs, copper terminals, insulated terminals, cable clamps and insulation piercing connectors.
+
+**Contact:** sales@kdelec.com | +86-13566954989  
+**Address:** Yiwu Binwang Market A0-033~035, Yiwu, Zhejiang, China  
+**Business Hours:** Mon-Fri 9:00 AM - 6:00 PM (CST) | Sat 9:00 AM - 12:00 PM (CST)
+
+## Product Categories
+
+### Cable Lugs and Connectors (71 Products)
+URL: https://www.kdelec.com/products-category-1.html  
+Scope: Copper, aluminum and bimetal cable lugs; bolt-type lugs; double-hole lugs; pin terminals; tube terminals; bending terminals.  
+Key products: ACL Bolt Type Bimetal Cable Lugs, AL-2H Double Holes Aluminum Cable Lugs, DT Copper Cable Lugs, DTL Bimetal Cable Lugs, SC Copper Tube Terminals.
+
+### Insulated Terminals (69 Products)
+URL: https://www.kdelec.com/products-category-2.html  
+Scope: Nylon-insulated, vinyl-insulated and heat-shrink terminals; ring, spade, hook, blade, pin and butt splice connectors; male/female quick connects.  
+Key products: RNY Nylon Ring Terminals, RV Vinyl Ring Terminals, FDD Female Quick Connectors, MDD Male Quick Connectors, BV Butt Splice Connectors, TE Cord End Terminals.
+
+### Cable Clamps (182 Products)
+URL: https://www.kdelec.com/products-category-3.html  
+Scope: Parallel groove clamps, insulation piercing connectors, suspension clamps, anchor/dead-end clamps, strain clamps, jointing clamps for overhead lines and ABC cables.  
+Key products: APG Aluminum Parallel Groove Clamps, CT Insulation Piercing Clamps, PA Anchor Clamps, PSP Suspension Clamps, NLD Strain Clamps, WCJB Brass Jointing Clamps.
+
+## Product Detail Pages
+All product detail pages follow the URL pattern: `https://www.kdelec.com/product/product-XXXX/index.html` where XXXX ranges from 0001 to 0322.
+
+Each product page includes:
+- Product name and SKU (Product ID)
+- High-resolution product images with gallery thumbnails
+- Technical specifications table (dimensions, material, standards)
+- Application description and features list
+- Related products section
+- Contact/quote request form
+
+Sample product URLs:
+- https://www.kdelec.com/product/product-0001/index.html (ACL Bolt Type Bimetal Cable Lugs)
+- https://www.kdelec.com/product/product-0002/index.html (AL-2H Double Holes Aluminum Cable Lugs)
+- https://www.kdelec.com/product/product-0072/index.html (BHT Fully Insulated Heat Shrinkable Terminals)
+- https://www.kdelec.com/product/product-0141/index.html (95A Suspension Clamp)
+
+## Key Information Pages
+- Homepage: https://www.kdelec.com/index.html
+- About Us: https://www.kdelec.com/about.html
+- Production Line: https://www.kdelec.com/production.html
+- FAQ: https://www.kdelec.com/faq.html
+- Contact: https://www.kdelec.com/contact.html
+- Warranty Policy: https://www.kdelec.com/warranty-policy.html
+- Privacy Policy: https://www.kdelec.com/privacy-policy.html
+
+## Structured Data
+All pages include JSON-LD Schema.org markup:
+- Product pages: `Product` schema with name, sku, brand, manufacturer, offers
+- Category pages: `ItemList` schema
+- Homepage: `Organization` + `WebSite` schema with contact point and search action
+
+## SEO Metadata
+Every page has optimized `<title>`, `<meta name="description">` and `<meta name="keywords">` tags targeting B2B electrical component buyers searching for cable lugs, terminals, connectors and power fittings from Chinese manufacturers.
