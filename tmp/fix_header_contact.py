@@ -2,8 +2,8 @@ import os
 import re
 
 base_dir = r"C:\Users\ADMIN\.jvs\.openclaw\workspace\kunde-website"
-old_style = 'class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1;">'
-new_style = 'class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1; padding-right: 20px;">'
+old_style = 'class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1; padding-right: 20px;">'
+new_style = 'class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1; padding-right: 60px;">'
 
 count = 0
 for root, dirs, files in os.walk(base_dir):
