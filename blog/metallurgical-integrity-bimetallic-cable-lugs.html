@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBP1X70205"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GBP1X70205');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Specify Cable Lugs in Engineering Drawings | Kunde Electric Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/mobile-optimized.css">
+  
+  
+
+
+<style>
+/* Copy button: minimal emoji, always visible */
+.copy-email-btn { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: var(--primary-blue, #1a73e8); 
+  padding: 0 2px; 
+  font-size: 16px; 
+  line-height: 1; 
+  white-space: nowrap; 
+  margin-left: 4px; 
+  flex-shrink: 0;
+}
+.copy-email-btn:hover { opacity: 0.7; }
+.copy-email-btn.copied { color: #2e7d32; }
+.copy-email-btn .copy-text { display: none; }
+.copy-email-btn::before { content: "📋"; }
+.copy-email-btn.copied::before { content: "✓"; }
+
+/* Header contact: simple flex, allow wrap only on very narrow screens */
+.header-contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  overflow: visible !important;
+  flex-wrap: wrap !important;
+}
+
+/* On narrow screens (< 480px), stack email+button above phone */
+@media (max-width: 480px) {
+  .header-contact {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .header-contact > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+}
+</style>
+
+<style>
+/* Copy button: show [Copy] text on desktop, CSS icon on mobile */
+.copy-email-btn { transition: background 0.15s; }
+.copy-email-btn:hover { background: rgba(26,115,232,0.08); }
+.copy-email-btn.copied { border-color: #2e7d32; color: #2e7d32; }
+.copy-email-btn .copy-text { display: inline; }
+@media (max-width: 768px) {
+  .copy-email-btn { padding: 0; min-width: auto; font-size: 16px; }
+  .copy-email-btn .copy-text { display: none; }
+  .copy-email-btn::before {
+    content: "📋";
+    font-size: 14px;
+    line-height: 1;
+  }
+  .copy-email-btn.copied::before { content: "✓"; }
+}
+</style>
+</head>
+<body>
+<!-- Header Main -->
+  <header class="header-main">
+    <div class="container">
+      <a href="/index.html" class="logo">
+        <img src="/images/logo.png" alt="KUNDE ELECTRIC">
+      </a>
+      <div class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1;"> <div style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+            <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </div> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a> </div></header>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="/index.html">HOME</a></li>
+        <li><a href="/about.html">ABOUT US</a></li>
+        <li><a href="/products.html">PRODUCT</a></li>
+        <li><a href="/blog.html">BLOG</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/production.html">PRODUCTION LINE</a></li>
+        <li><a href="/contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Content -->
+  <main class="article-container">
+    <a href="index.html" class="back-link">&larr; Back to Blog</a>
+    
+    <div class="article-header">
+      <div class="article-date">2026-09-15 | By Kunde Electric Quality Assurance</div>
+      <h1 class="article-title">Metallurgical Integrity in Bimetallic Cable Lugs: Preventing Galvanic Degradation</h1>
+    </div>
+    
+    <div class="article-content">
+      <h2>Introduction</h2>
+      <p>When connecting aluminum conductors to copper busbars in switchgear or transformer housings, the direct contact of dissimilar metals triggers aggressive galvanic corrosion. While <strong>bimetallic cable lugs (Cu-Al)</strong> are the industry standard, manufacturing defects in the junction zone remain a leading cause of thermal runaway.</p>
+      
+      <h2>The Metallurgy of Friction Welding vs. Brazing</h2>
+      <p>Many low-cost suppliers rely on flame brazing or resistance welding to join the copper palm to the aluminum barrel. This creates a brittle intermetallic layer (Cu&#x2089;Al&#x2084;) at the interface, resulting in:</p>
+      <ul>
+        <li><strong>High Electrical Resistance:</strong> The joint creates a localized heat trap during peak load periods.</li>
+        <li><strong>Mechanical Brittleness:</strong> Thermal expansion differences cause the joint to crack under shear stress or crimping pressure.</li>
+      </ul>
+      
+      <h2>High-Precision Solid-State Friction Welding</h2>
+      <p>Quality bimetallic connectors must be produced using <strong>solid-state friction welding</strong>. Under intense axial force and rotational speed, the copper and aluminum plasticize without melting, forging a seamless atomic bond.</p>
+      <ul>
+        <li><strong>Zero Void Inclusions:</strong> Eliminates air gaps and moisture pockets that host moisture-driven galvanic degradation.</li>
+        <li><strong>Low Contact Resistance:</strong> Preserves conductivity near 100% of the base metal ratings.</li>
+      </ul>
+      
+      <h2>Quality Verification Criteria for Importers</h2>
+      <p>Before accepting shipment, B2B buyers should demand certified <strong>100% torque shear testing</strong> on the welded joint and salt spray corrosion endurance testing in accordance with <strong>ASTM B117 standards</strong> (minimum 1,000 hours without bond separation).</p>
+      
+      <h2>Conclusion</h2>
+      <p>The integrity of a bimetallic lug is determined at the moment of manufacture—not in the field. Specifying friction-welded construction and demanding third-party test certification are the two most effective safeguards against premature joint failure in Cu-Al transition applications.</p>
+      
+      <div class="cta-box">
+        <p><strong>Need technical support?</strong> Contact our engineering team at <a href="mailto:sales@kdelec.com" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="email-with-copy" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+            <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </span></a> or +86-13566954989</p>
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

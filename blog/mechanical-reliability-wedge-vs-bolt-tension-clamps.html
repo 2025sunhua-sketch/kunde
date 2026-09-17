@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBP1X70205"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GBP1X70205');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Specify Cable Lugs in Engineering Drawings | Kunde Electric Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/mobile-optimized.css">
+  
+  
+
+
+<style>
+/* Copy button: minimal emoji, always visible */
+.copy-email-btn { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  color: var(--primary-blue, #1a73e8); 
+  padding: 0 2px; 
+  font-size: 16px; 
+  line-height: 1; 
+  white-space: nowrap; 
+  margin-left: 4px; 
+  flex-shrink: 0;
+}
+.copy-email-btn:hover { opacity: 0.7; }
+.copy-email-btn.copied { color: #2e7d32; }
+.copy-email-btn .copy-text { display: none; }
+.copy-email-btn::before { content: "📋"; }
+.copy-email-btn.copied::before { content: "✓"; }
+
+/* Header contact: simple flex, allow wrap only on very narrow screens */
+.header-contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  overflow: visible !important;
+  flex-wrap: wrap !important;
+}
+
+/* On narrow screens (< 480px), stack email+button above phone */
+@media (max-width: 480px) {
+  .header-contact {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  .header-contact > div:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+}
+</style>
+
+<style>
+/* Copy button: show [Copy] text on desktop, CSS icon on mobile */
+.copy-email-btn { transition: background 0.15s; }
+.copy-email-btn:hover { background: rgba(26,115,232,0.08); }
+.copy-email-btn.copied { border-color: #2e7d32; color: #2e7d32; }
+.copy-email-btn .copy-text { display: inline; }
+@media (max-width: 768px) {
+  .copy-email-btn { padding: 0; min-width: auto; font-size: 16px; }
+  .copy-email-btn .copy-text { display: none; }
+  .copy-email-btn::before {
+    content: "📋";
+    font-size: 14px;
+    line-height: 1;
+  }
+  .copy-email-btn.copied::before { content: "✓"; }
+}
+</style>
+</head>
+<body>
+<!-- Header Main -->
+  <header class="header-main">
+    <div class="container">
+      <a href="/index.html" class="logo">
+        <img src="/images/logo.png" alt="KUNDE ELECTRIC">
+      </a>
+      <div class="header-contact" style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; white-space: nowrap; font-size: 15px; overflow: visible; min-width: 0; flex: 1;"> <div style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+            <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </div> <a style="white-space: nowrap;" href="tel:+8613566954989">+86-13566954989</a> </div></header>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="/index.html">HOME</a></li>
+        <li><a href="/about.html">ABOUT US</a></li>
+        <li><a href="/products.html">PRODUCT</a></li>
+        <li><a href="/blog.html">BLOG</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/production.html">PRODUCTION LINE</a></li>
+        <li><a href="/contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Content -->
+  <main class="article-container">
+    <a href="index.html" class="back-link">&larr; Back to Blog</a>
+    
+    <div class="article-header">
+      <div class="article-date">2026-09-16 | By Kunde Electric Engineering Team</div>
+      <h1 class="article-title">Mechanical Reliability of Wedge vs. Bolt-Type Tension Clamps in ACSR Line Operations</h1>
+    </div>
+    
+    <div class="article-content">
+      <h2>Introduction</h2>
+      <p>In high-voltage distribution networks, mechanical failure at the dead-end strain point often leads to catastrophic line dropouts. Choosing between <strong>wedge-type</strong> and <strong>bolt-type tension clamps</strong> requires a granular understanding of stress distribution along ACSR (Aluminum Conductor Steel Reinforced) conductors.</p>
+      
+      <h2>1. Stress Distribution &amp; Core Gripping Mechanics</h2>
+      <ul>
+        <li><strong>Bolt-Type Clamps:</strong> Depend entirely on the clamping force exerted by high-tensile U-bolts. If torque specs are not precisely maintained during installation (typically 40-45 Nm for M12 galvanised bolts), uneven pressure leads to localized stress concentrations. This can crush outer aluminum strands while failing to secure the inner steel core.</li>
+        <li><strong>Wedge-Type Clamps:</strong> Utilize a self-tightening wedge effect. As line tension increases, the conical or tapered wedges pull tighter into the body, distributing clamping force evenly across the contact length. This inherently minimizes conductor deformation and resists thermal expansion cycles.</li>
+      </ul>
+      
+      <h2>2. Fatigue Resistance Under Wind Vibration (Aeolian Vibration)</h2>
+      <p>Substations and long-span overhead lines suffer from high-frequency Aeolian vibration. Bolt-type clamps feature rigid entry points that create micro-fretting corrosion on conductor strands. Self-adjusting wedge clamps with neoprene or aluminum alloy liners act as natural dampers, drastically reducing strand fatigue at the mouth of the fitting.</p>
+      
+      <h2>3. Compliance with IEC 61284 Standards</h2>
+      <p>For critical grid modernization projects, tension clamps must guarantee a <strong>holding strength of no less than 95% of the conductor's calculated Ultimate Tensile Strength (UTS)</strong>. At Kunde Electric (kdelec.com), our forged aluminum wedge clamps undergo rigorous tensile hold tests and thermal cycling to prevent creep under sustained load.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Selecting the right tension clamp is not merely a procurement decision—it is an engineering commitment to grid reliability. Wedge-type clamps offer superior performance in dynamic loading environments, while bolt-type variants remain viable for static, low-vibration applications where torque control can be guaranteed.</p>
+      
+      <div class="cta-box">
+        <p><strong>Need technical support?</strong> Contact our engineering team at <a href="mailto:sales@kdelec.com" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;"><span class="email-with-copy" style="display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+            <a href="mailto:sales@kdelec.com" style="color: inherit; text-decoration: none;">sales@kdelec.com</a>
+            <button type="button" class="copy-email-btn" onclick="navigator.clipboard.writeText('sales@kdelec.com'); this.classList.add('copied'); setTimeout(()=>this.classList.remove('copied'), 1500);" style="background: none; border: none; cursor: pointer; color: var(--primary-blue, #1a73e8); padding: 0; font-size: 16px; line-height: 1; white-space: nowrap; margin-left: 4px; position: relative; text-align: center; flex-shrink: 0;" title="Copy email address" aria-label="Copy email address"><span class="copy-text">[Copy]</span></button>
+          </span></a> or +86-13566954989</p>
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 KUNDE ELECTRIC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
