@@ -1,0 +1,9 @@
+# 旧静态页 → 现行目录页（301）。
+# 注意：这里绝不能加 "/about /about.html" 这类规则 —— Pages 现在开着 Semantic URLs，
+# 它会把 /about.html 308 到 /about，两条规则相遇就是无限重定向循环。
+# 等控制台关掉 Semantic URLs 之后，才允许加反向规则（批次 0 第二刀）。
+/products-category-1.html  /category/cable-lugs-and-connectors/  301
+/products-category-2.html  /category/insulated-terminals/        301
+/products-category-3.html  /category/cable-clamps/               301
+/products-categories-fix.html  /products.html                    301
+/product-detail.html  /products.html                             301

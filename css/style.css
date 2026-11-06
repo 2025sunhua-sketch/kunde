@@ -335,7 +335,7 @@ h3 { font-size: 28px; }
   padding: 0 24px;
 }
 
-.hero-content h1 {
+.hero-content h1, .hero-content .hero-title {
   color: var(--white);
   margin-bottom: 16px;
   font-size: 64px;
@@ -358,7 +358,7 @@ h3 { font-size: 28px; }
     height: 400px;
   }
   
-  .hero-content h1 {
+  .hero-content h1, .hero-content .hero-title {
     font-size: 36px;
   }
   

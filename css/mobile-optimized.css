@@ -46,7 +46,7 @@
     height: 400px !important;
   }
   
-  .hero-content h1 {
+  .hero-content h1, .hero-content .hero-title {
     font-size: 32px !important;
   }
   
@@ -389,7 +389,7 @@
     height: 350px !important;
   }
   
-  .hero-content h1 {
+  .hero-content h1, .hero-content .hero-title {
     font-size: 26px !important;
   }
   
