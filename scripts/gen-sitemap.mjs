@@ -35,9 +35,17 @@ for (const f of flat) {
 }
 
 const blogDir = path.join(ROOT, 'blog');
+const skipped = [];
 if (fs.existsSync(blogDir)) {
   for (const f of fs.readdirSync(blogDir).filter((x) => /\.html$/i.test(x) && x !== 'article-template.html')) {
-    push(SITE + '/blog/' + f, path.join(blogDir, f), '0.6');
+    const p = path.join(blogDir, f);
+    // 存稿不进 sitemap：可见正文过短的文件（实测有一篇 80 字节、只剩一个 h1）会让 Google
+    // 收到一个近乎空白的 URL。跳过并在 stderr 报出来，交人决定补内容还是删文件。
+    const html = fs.readFileSync(p, 'utf8');
+    const visible = html.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length;
+    if (visible < 500) { skipped.push(f + ' (' + visible + ' 字符)'); continue; }
+    push(SITE + '/blog/' + f, p, '0.6');
   }
 }
 
@@ -65,4 +73,5 @@ const home = urls.filter((u) => u.loc === SITE + '/').length;
 const lastmods = new Set(urls.map((u) => u.lastmod)).size;
 const badForm = urls.filter((u) => /\/(category|product)\/[^/]+$/.test(u.loc)).length;
 console.error(`条数 ${urls.length} | 唯一 ${uniq.size} | 首页出现 ${home} 次 | lastmod 种类 ${lastmods} | 缺尾斜杠(会308) ${badForm}`);
+if (skipped.length) console.error(`跳过存稿文章 ${skipped.length} 篇：${skipped.join(', ')}`);
 process.stdout.write(xml);

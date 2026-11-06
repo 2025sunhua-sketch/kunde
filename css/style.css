@@ -1950,3 +1950,7 @@ img.loaded {
   height: auto;
   display: block;
 }
+
+/* 尺寸兜底：给带 width/height 属性的图保留比例与不溢出。:where() 特异度为 0，
+   所以任何既有规则（如 .hero-slide img{height:100%}）都仍然优先。 */
+:where(img[width][height]) { max-width: 100%; height: auto; }

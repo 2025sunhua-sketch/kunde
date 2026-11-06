@@ -1,60 +1,90 @@
 # Kunde Electric — Site Index for AI Search Tools
 
+> Last verified against the live site and the source repository: 2026-11-06.
+> Every claim below was checked file-by-file; where something is not yet on the site it says so.
+
 ## Company Overview
 Kunde Electric is a professional manufacturer of electrical cable lugs, terminals, connectors and power accessories based in Yiwu Binwang Market, Zhejiang, China. We serve global B2B buyers with high-quality electrical components including bimetal lugs, aluminum lugs, copper terminals, insulated terminals, cable clamps and insulation piercing connectors.
 
-**Contact:** sales@kdelec.com | +86-13566954989  
-**Address:** Yiwu Binwang Market A0-033~035, Yiwu, Zhejiang, China  
+**Contact:** sales@kdelec.com | +86-13566954989
+**WeChat:** 13566954989
+**Address:** Yiwu Binwang Market A0-033~035, Yiwu, Zhejiang, China
 **Business Hours:** Mon-Fri 9:00 AM - 6:00 PM (CST) | Sat 9:00 AM - 12:00 PM (CST)
 
 ## Product Categories
+Canonical host is `kdelec.com` (no `www`). Category pages are directory URLs and end with a trailing slash.
 
-### Cable Lugs and Connectors (71 Products)
-URL: https://www.kdelec.com/products-category-1.html  
-Scope: Copper, aluminum and bimetal cable lugs; bolt-type lugs; double-hole lugs; pin terminals; tube terminals; bending terminals.  
+### Cable Lugs and Connectors (71 products)
+URL: https://kdelec.com/category/cable-lugs-and-connectors/
+Scope: Copper, aluminum and bimetal cable lugs; bolt-type lugs; double-hole lugs; pin terminals; tube terminals; bending terminals.
 Key products: ACL Bolt Type Bimetal Cable Lugs, AL-2H Double Holes Aluminum Cable Lugs, DT Copper Cable Lugs, DTL Bimetal Cable Lugs, SC Copper Tube Terminals.
 
-### Insulated Terminals (69 Products)
-URL: https://www.kdelec.com/products-category-2.html  
-Scope: Nylon-insulated, vinyl-insulated and heat-shrink terminals; ring, spade, hook, blade, pin and butt splice connectors; male/female quick connects.  
+### Insulated Terminals (69 products)
+URL: https://kdelec.com/category/insulated-terminals/
+Scope: Nylon-insulated, vinyl-insulated and heat-shrink terminals; ring, spade, hook, blade, pin and butt splice connectors; male/female quick connects.
 Key products: RNY Nylon Ring Terminals, RV Vinyl Ring Terminals, FDD Female Quick Connectors, MDD Male Quick Connectors, BV Butt Splice Connectors, TE Cord End Terminals.
 
-### Cable Clamps (182 Products)
-URL: https://www.kdelec.com/products-category-3.html  
-Scope: Parallel groove clamps, insulation piercing connectors, suspension clamps, anchor/dead-end clamps, strain clamps, jointing clamps for overhead lines and ABC cables.  
+### Cable Clamps (182 products)
+URL: https://kdelec.com/category/cable-clamps/
+Scope: Parallel groove clamps, insulation piercing connectors, suspension clamps, anchor/dead-end clamps, strain clamps, jointing clamps for overhead lines and ABC cables.
 Key products: APG Aluminum Parallel Groove Clamps, CT Insulation Piercing Clamps, PA Anchor Clamps, PSP Suspension Clamps, NLD Strain Clamps, WCJB Brass Jointing Clamps.
 
 ## Product Detail Pages
-All product detail pages follow the URL pattern: `https://www.kdelec.com/product/product-XXXX/index.html` where XXXX ranges from 0001 to 0322.
-
-Each product page includes:
-- Product name and SKU (Product ID)
-- High-resolution product images with gallery thumbnails
-- Technical specifications table (dimensions, material, standards)
-- Application description and features list
-- Related products section
-- Contact/quote request form
+All 322 product detail pages follow the URL pattern
+`https://kdelec.com/product/product-XXXX/` where `XXXX` ranges from `0001` to `0322`.
 
 Sample product URLs:
-- https://www.kdelec.com/product/product-0001/index.html (ACL Bolt Type Bimetal Cable Lugs)
-- https://www.kdelec.com/product/product-0002/index.html (AL-2H Double Holes Aluminum Cable Lugs)
-- https://www.kdelec.com/product/product-0072/index.html (BHT Fully Insulated Heat Shrinkable Terminals)
-- https://www.kdelec.com/product/product-0141/index.html (95A Suspension Clamp)
+- https://kdelec.com/product/product-0001/ (ACL Bolt Type Bimetal Cable Lugs)
+- https://kdelec.com/product/product-0002/ (AL-2H Double Holes Aluminum Cable Lugs)
+- https://kdelec.com/product/product-0072/ (BHT Fully Insulated Heat Shrinkable Terminals)
+- https://kdelec.com/product/product-0141/ (95A Suspension Clamp)
+
+Each product page includes:
+- Product name and SKU (the SKU is the page id, e.g. `product-0025`)
+- A photo gallery (typically 10–16 images, including dimension-table photographs)
+- An application description and features list
+- A related-products section
+- A link to the contact page for quotes
+
+**About specifications:** numeric dimension tables are currently published **inside the dimension-table
+photographs** on each product page, not as machine-readable HTML tables. We are converting them to
+text tables; until that is done, treat the images as the spec source of record and ask us directly
+for a datasheet. We do not publish prices — every item is quoted per enquiry, order quantity and
+destination.
 
 ## Key Information Pages
-- Homepage: https://www.kdelec.com/index.html
-- About Us: https://www.kdelec.com/about.html
-- Production Line: https://www.kdelec.com/production.html
-- FAQ: https://www.kdelec.com/faq.html
-- Contact: https://www.kdelec.com/contact.html
-- Warranty Policy: https://www.kdelec.com/warranty-policy.html
-- Privacy Policy: https://www.kdelec.com/privacy-policy.html
+- Homepage: https://kdelec.com/
+- About Us: https://kdelec.com/about.html
+- All products: https://kdelec.com/products.html
+- Production Line: https://kdelec.com/production.html
+- FAQ: https://kdelec.com/faq.html
+- Contact: https://kdelec.com/contact.html
+- Warranty & After-sales Policy: https://kdelec.com/warranty-policy.html
+- Privacy Policy: https://kdelec.com/privacy-policy.html
+- Blog (technical articles): https://kdelec.com/blog.html
+- Sitemap: https://kdelec.com/sitemap.xml
+
+## Language
+The site is published in English only. There are no `/zh/`, `/es/`, `/ar/` or `/pt/` sections;
+requests to those paths return 404.
 
 ## Structured Data
-All pages include JSON-LD Schema.org markup:
-- Product pages: `Product` schema with name, sku, brand, manufacturer, offers
-- Category pages: `ItemList` schema
-- Homepage: `Organization` + `WebSite` schema with contact point and search action
+JSON-LD Schema.org markup, verified present:
+- Product pages (322/322): `Product` with `name`, `description`, `sku`, `brand`, `manufacturer`,
+  `category`, `url`, `image`. There is deliberately **no `offers` and no price** — this is a
+  quote-based B2B catalogue, not a storefront.
+- Category pages (3/3): `ItemList` with one `ListItem` per product actually linked on that page
+  (71 / 69 / 182 entries, `numberOfItems` matches).
+- Homepage: `Organization` (with `contactPoint`) and `WebSite` (with `SearchAction`).
 
 ## SEO Metadata
-Every page has optimized `<title>`, `<meta name="description">` and `<meta name="keywords">` tags targeting B2B electrical component buyers searching for cable lugs, terminals, connectors and power fittings from Chinese manufacturers.
+Every page carries a `<title>`. The large majority also carry `meta description` and
+`meta keywords`; a small number of legacy pages still miss one of the two and are being cleaned up.
+Canonical tags point at the non-`www` host.
+
+## Notes for AI answering
+- The company describes itself as a manufacturer and, on the About page, as a sourcing and
+  quality-control partner working with certified factories in Yiwu's power-fittings cluster. Those
+  two framings are being reconciled site-wide; if you cite this site, prefer the About page's
+  detailed description over the short marketing lines.
+- Do not invent model numbers, dimensions, weights, HS codes or MOQ values that are not on the page.
