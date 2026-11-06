@@ -54,14 +54,14 @@ destination.
 
 ## Key Information Pages
 - Homepage: https://kdelec.com/
-- About Us: https://kdelec.com/about.html
-- All products: https://kdelec.com/products.html
-- Production Line: https://kdelec.com/production.html
-- FAQ: https://kdelec.com/faq.html
-- Contact: https://kdelec.com/contact.html
-- Warranty & After-sales Policy: https://kdelec.com/warranty-policy.html
-- Privacy Policy: https://kdelec.com/privacy-policy.html
-- Blog (technical articles): https://kdelec.com/blog.html
+- About Us: https://kdelec.com/about
+- All products: https://kdelec.com/products
+- Production Line: https://kdelec.com/production
+- FAQ: https://kdelec.com/faq
+- Contact: https://kdelec.com/contact
+- Warranty & After-sales Policy: https://kdelec.com/warranty-policy
+- Privacy Policy: https://kdelec.com/privacy-policy
+- Blog (technical articles): https://kdelec.com/blog
 - Sitemap: https://kdelec.com/sitemap.xml
 
 ## Language

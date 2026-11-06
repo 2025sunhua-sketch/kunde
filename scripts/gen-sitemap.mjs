@@ -31,7 +31,7 @@ const flat = ['index.html', 'about.html', 'products.html', 'contact.html', 'faq.
 for (const f of flat) {
   const p = path.join(ROOT, f);
   if (!fs.existsSync(p)) continue;
-  push(SITE + (f === 'index.html' ? '/' : '/' + f), p, f === 'index.html' ? '1.0' : '0.8');
+  push(SITE + (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/i, '')), p, f === 'index.html' ? '1.0' : '0.8');
 }
 
 const blogDir = path.join(ROOT, 'blog');
@@ -45,7 +45,7 @@ if (fs.existsSync(blogDir)) {
     const visible = html.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '')
       .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length;
     if (visible < 500) { skipped.push(f + ' (' + visible + ' 字符)'); continue; }
-    push(SITE + '/blog/' + f, p, '0.6');
+    push(SITE + '/blog/' + f.replace(/\.html$/i, ''), p, '0.6');
   }
 }
 
