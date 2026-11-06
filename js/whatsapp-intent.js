@@ -1,70 +1,85 @@
 /**
- * whatsapp-intent.js — 让安卓上的 WhatsApp 链接直接打开 App，而不是停在
- * api.whatsapp.com 的"打开应用 / 下载"中间页。
+ * whatsapp-intent.js — 安卓点 WhatsApp 链接时先尝试直接唤起 App，失败就一定回落。
  *
- * 为什么要换机制：https://wa.me/<n> 只是 302 到 api.whatsapp.com/send/?…，
- * 由那个 225 KB 的网页再去尝试拉起 whatsapp://。中间任何一环被拦（浏览器拦自定义协议、
- * 在微信/Telegram 的内置 WebView 里打开、或本地网络只能半加载该页面），用户就停在下载页，
- * 明明装了 WhatsApp 也进不了对话。intent:// 由 Chrome 系浏览器在本地直接解析成 App 调用，
- * 不经过任何网络请求。
+ * 为什么不用 intent://：VIVO / OPPO / 小米 / UC 等国产浏览器的 UA 里都带 "Chrome/"，
+ * 按 UA 判断会把它们误认成支持 intent 的 Chrome 系。它们不认 intent://，导航被静默丢弃，
+ * 用户点了没有任何反应 —— 比改之前停在 api.whatsapp.com 下载页更糟（这是 30050b7 造成的回退）。
  *
- * 渐进增强：href 里保留 wa.me 原值。JS 不执行时（爬虫、禁脚本、老设备）行为与现在完全一致。
- * 只做两件事：安卓 Chrome 系 → intent://；安卓其他浏览器 → whatsapp://。
- * iOS 与桌面保持 wa.me（那条路径在 iOS 上工作正常，改成私有协议反而更容易失败）。
+ * 现在的策略（保证不劣于改动前）：
+ *   1) href 里始终保留原始 wa.me 链接，不做任何改写 —— 爬虫、禁用 JS、中间件失败时行为与从前一致；
+ *   2) 安卓上点击时先尝试 whatsapp://send?…（用户手势发起，Chrome 与多数国产浏览器都放行）；
+ *   3) 1.2 秒后如果页面仍在最前面，说明没唤起成功 → 主动导航回原 wa.me 链接，
+ *      即使用户看到的仍是那个"打开应用/下载"页，也绝不会是"点了没反应"。
+ * iOS 与桌面完全不改：wa.me 在那两处工作正常，换成私有协议反而更容易失败。
  */
 (function () {
   'use strict';
 
   var ua = navigator.userAgent || '';
   var isAndroid = /Android\b/i.test(ua);
-  if (!isAndroid) return;                                  // iOS / 桌面：不动
+  if (!isAndroid) return;
 
-  var chromeish = /\b(CriOS|Chrome|Chromium|EdgA|SamsungBrowser|Brave)\b/i.test(ua)
-    && !/\b(Firefox|OPR|OPiOS)\b/i.test(ua);
+  var WAIT_MS = 1200;
 
-  function build(href) {
+  function parse(href) {
     var u;
     try { u = new URL(href, location.href); } catch (e) { return null; }
     if (u.hostname !== 'wa.me' && u.hostname !== 'api.whatsapp.com') return null;
-
-    // 号码：wa.me/<n> 或 /send/<n> 在路径里；api.whatsapp.com/send/?phone=<n> 在查询里
     var phone = '';
     var m = u.pathname.match(/^\/(?:send\/?)?(\d{7,15})\/?$/);
     if (m) phone = m[1];
-    if (!phone) {
-      var p = u.searchParams.get('phone') || '';
-      phone = p.replace(/\D/g, '');
-    }
+    if (!phone) phone = (u.searchParams.get('phone') || '').replace(/\D/g, '');
     if (phone.length < 7) return null;
+    return { phone: phone, text: u.searchParams.get('text') || '' };
+  }
 
-    var text = u.searchParams.get('text') || '';
-    var q = 'send?phone=' + phone + (text ? '&text=' + encodeURIComponent(text) : '');
+  /* encodeURIComponent 不转义 ' ! ( ) * ~ 这些字符；scheme URL 里留裸字符，
+     部分安卓浏览器会截断参数或直接放弃导航。深链与兜底都用严格编码。 */
+  function enc(s) {
+    return encodeURIComponent(s).replace(/[!'()*~]/g, function (c) {
+      return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+  }
 
-    if (chromeish) {
-      // package=com.whatsapp；只装 Business 或没装的用户由 browser_fallback_url 兜回 wa.me
-      return 'intent://' + q + '#Intent;scheme=whatsapp;package=com.whatsapp;S.browser_fallback_url='
-        + encodeURIComponent(href) + ';end';
+  function deepLink(p) {
+    return 'whatsapp://send?phone=' + p.phone + (p.text ? '&text=' + enc(p.text) : '');
+  }
+
+  /* 兜底用长链而不是 wa.me：wa.me 只是 302 到 api.whatsapp.com/send/?phone=…，
+     多一跳，且 wa.me 这个域名在部分安卓浏览器/部分网络下本身就连不上（店主反馈的正是这类）。
+     号码一律取纯数字：phone= 参数不接受加号与空格。 */
+  function longLink(p) {
+    return 'https://api.whatsapp.com/send/?phone=' + p.phone
+      + (p.text ? '&text=' + enc(p.text) : '');
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest
+      ? e.target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com"]')
+      : null;
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href) return;
+    var p = parse(href);
+    if (!p) return;                                    // 解析不了就完全不干预，走浏览器默认行为
+
+    e.preventDefault();
+    var t0 = Date.now();
+    var deep = deepLink(p);
+    var fallback = longLink(p);
+    window.__waAttempt = { deep: deep, fallback: fallback, at: t0 };   // 供验收脚本读取，不改变行为
+
+    try {
+      window.location.href = deep;
+    } catch (err) {
+      window.location.href = fallback;                 // 连赋值都抛异常（极罕见）→ 立刻兜底
+      return;
     }
-    return 'whatsapp://' + q;
-  }
 
-  function rewrite(root) {
-    var list = (root || document).querySelectorAll('a[href*="wa.me/"], a[href*="api.whatsapp.com"]');
-    var n = 0;
-    for (var i = 0; i < list.length; i++) {
-      var a = list[i];
-      var href = a.getAttribute('href');
-      if (/^intent:|^whatsapp:/.test(href)) continue;       // 幂等
-      var next = build(href);
-      if (next) { a.setAttribute('href', next); a.setAttribute('target', '_self'); n++; }
-    }
-    return n;
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { rewrite(); });
-  } else {
-    rewrite();
-  }
-  window.__waRewrite = rewrite;                             // 供验收脚本调用与计数
+    setTimeout(function () {
+      // 页面仍在最前台 = App 没被拉起来 → 走长链，绝不留"点了没反应"
+      var stillHere = !document.hidden && document.visibilityState !== 'hidden';
+      if (stillHere && Date.now() - t0 >= WAIT_MS - 200) window.location.href = fallback;
+    }, WAIT_MS);
+  }, true);
 })();
