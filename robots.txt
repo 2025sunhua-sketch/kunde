@@ -1,0 +1,28 @@
+# robots.txt for KUNDE ELECTRIC
+# Static, English-only catalogue. All legitimate crawlers, including AI answer
+# engines, are welcome. There are no hidden, gated or parameter-generated pages.
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Disallow: /assets/search-index.json
+
+# AI / answer-engine crawlers explicitly allowed (informational; "User-agent: *" above already allows them)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://kdelec.com/sitemap.xml

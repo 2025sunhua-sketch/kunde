@@ -1,0 +1,15 @@
+# Repository root IS the site root (Cloudflare Pages root_dir is empty).
+# Only the generated static site belongs here.
+.env
+.env.*
+.github/
+.wrangler/
+_tmp/
+reports/
+*.log
+*.bak
+*_probe*
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
