@@ -60,36 +60,29 @@
   $$('#drawer a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
 
   /* ------------------------------------------------------------ mega menu */
+  // 交互契约：hover 或点击 Products 都会展开；鼠标向下移动绝不关闭菜单。
+  // 只有「点外部」「点分类链接」「再次点按钮」「Esc」才收起。
   const megaBtn = $('#mega-toggle');
   const mega = $('#mega');
   const megaWrap = megaBtn?.parentElement;
-  let megaTimer;
   function setMega(open) {
     if (!mega || !megaBtn) return;
     mega.hidden = !open;
     megaBtn.setAttribute('aria-expanded', String(open));
   }
-  function openMega() { clearTimeout(megaTimer); setMega(true); }
-  function closeMegaSoon() {
-    clearTimeout(megaTimer);
-    // 鼠标从导航移到下拉时可能短暂经过两者之间：留 260ms 过渡窗口，
-    // 一旦进入菜单就取消关闭，避免「鼠标往下拉菜单就没了」。
-    megaTimer = setTimeout(() => setMega(false), 260);
-  }
   const canHover = () => matchMedia('(hover: hover) and (min-width: 961px)').matches;
   megaBtn?.addEventListener('click', e => {
     e.stopPropagation();
-    clearTimeout(megaTimer);
     setMega(mega.hidden);
   });
-  megaWrap?.addEventListener('mouseenter', () => { if (canHover()) openMega(); });
-  megaWrap?.addEventListener('mouseleave', closeMegaSoon);
-  mega?.addEventListener('mouseenter', openMega);
-  mega?.addEventListener('mouseleave', closeMegaSoon);
-  // 只有点到真正的链接才收起菜单；点滚动条 / 空白处不应误关。
+  megaWrap?.addEventListener('mouseenter', () => { if (canHover()) setMega(true); });
+  // 刻意不监听 mouseleave：鼠标下移 / 经过滚动条都不应让菜单消失。
   mega?.addEventListener('click', e => { if (e.target.closest('a')) setMega(false); });
   document.addEventListener('click', e => {
     if (mega && !mega.hidden && !e.target.closest('.mega-wrap')) setMega(false);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mega && !mega.hidden) { setMega(false); megaBtn?.focus(); }
   });
 
   /* ---------------------------------------------------------------- search */

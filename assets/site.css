@@ -212,10 +212,10 @@
 
   /* mega menu */
   .mega-wrap { position: relative; display: inline-flex; align-items: center; }
-  .nav-caret { padding: 10px 9px 10px 0; }
   .mega {
-    /* 与按钮零间隙：鼠标下移不再穿过空白而触发 mouseleave 关闭菜单 */
-    position: absolute; top: 100%; left: -280px; width: min(760px, 86vw);
+    /* 零间隙贴合按钮，并以按钮为中心水平居中，窄视口不会被裁到屏幕外 */
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    width: min(760px, calc(100vw - 24px));
     background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
     border-top-left-radius: var(--r-sm); border-top-right-radius: var(--r-sm);
     box-shadow: var(--shadow-3); padding: var(--sp-6); z-index: 70;
@@ -603,7 +603,6 @@
   @media (max-width: 1120px) {
     .nav { gap: 0; }
     .nav-link { padding: 9px 9px; font-size: .82rem; }
-    .mega { left: -180px; }
   }
   @media (max-width: 960px) {
     .nav, .header-cta { display: none; }

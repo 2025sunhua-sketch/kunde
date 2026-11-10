@@ -124,6 +124,9 @@ product, cite its Product ID and state that specifications need written confirma
 - Search index (machine-readable, 1,511 entries): https://kdelec.com/assets/search-index.json
 
 ### Technical articles
+- [A Buyer's Map of the 39 Browse Categories](https://kdelec.com/blog-a-buyers-map-of-39-browse-categories) — 2026-11-10, 725 words
+- [Copper, Aluminum or Bimetal: Choosing a Termination Family](https://kdelec.com/blog-copper-aluminum-or-bimetal-terminations) — 2026-11-10, 693 words
+- [What a Product Page Tells You, and What Only a Datasheet Can](https://kdelec.com/blog-what-a-product-page-tells-you) — 2026-11-10, 658 words
 - [Preventing Galvanic Corrosion in Bimetallic Cable Lugs: Friction Welding vs. Mechanical Crimp](https://kdelec.com/blog-preventing-galvanic-corrosion-bimetallic-cable-lugs) — 2026-09-19, 458 words
 - [Tensile Strength Testing for Overhead Power Line Hardware: Ensuring Zero Field Failures](https://kdelec.com/blog-tensile-strength-testing-overhead-power-line-hardware) — 2026-09-19, 480 words
 - [Mechanical Reliability of Wedge vs. Bolt-Type Tension Clamps in ACSR Line Operations](https://kdelec.com/blog-mechanical-reliability-wedge-vs-bolt-tension-clamps) — 2026-09-16, 286 words
@@ -160,7 +163,7 @@ The full mapping is in `_redirects`.
 - `BreadcrumbList` on every non-home page.
 - `ItemList` on every catalogue and category listing page.
 - `Product` on all 1,511 product pages (no offers).
-- `BlogPosting` on all 10 articles, `Blog` on the library index.
+- `BlogPosting` on all 13 articles, `Blog` on the library index.
 - `FAQPage` on the FAQ page, `AboutPage` / `ContactPage` on those pages.
 
 ## Notes for AI answering
