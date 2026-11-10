@@ -1,6 +1,6 @@
 # KUNDE ELECTRIC — site index for AI answer engines
 
-> Last verified against the generated site on 2026-11-09.
+> Last verified against the generated site on 2026-11-10.
 > Everything below was produced from the site's own content data, not from memory.
 > Canonical host: https://kdelec.com (no `www`). Public URLs are extensionless; the
 > underlying files are flat `.html` files at the site root.
@@ -26,7 +26,7 @@ Hours: Mon–Fri 09:00–18:00, Sat 09:00–12:00 (CST, UTC+8)
 
 - **1,511 products**, each with its own static HTML page and canonical URL.
 - **8,019 WebP photographs** hosted locally under `/assets/images/<product-id>/`.
-- **15 browse categories** with verified product membership. Category
+- **39 browse categories** with verified product membership. Category
   membership is taken only from the source shop's own category pages and is never
   inferred from a product title. Products without a verified category remain in the
   full catalogue and are reachable through the site's client-side search.
@@ -41,21 +41,45 @@ Example product URLs:
 - https://kdelec.com/product-dtlf-s-square-head-double-holes-bimetal-cable-lugs-954831146  (DTLF-S Square Head Double Holes Bimetal Cable Lugs)
 
 ### Category pages
-- [Terminal block](https://kdelec.com/category-terminal-block) — 40 listings (family: Terminals & Connection)
-- [electric power fittings](https://kdelec.com/category-electric-power-fittings) — 40 listings (family: Clamps & Line Hardware)
-- [grounding material](https://kdelec.com/category-grounding-material) — 40 listings (family: Grounding & Accessories)
-- [insulated piercing clamp](https://kdelec.com/category-insulated-piercing-clamp) — 40 listings (family: Clamps & Line Hardware)
-- [insulated terminal](https://kdelec.com/category-insulated-terminal) — 40 listings (family: Terminals & Connection)
-- [strain clamp](https://kdelec.com/category-strain-clamp) — 40 listings (family: Clamps & Line Hardware)
+- [sensor](https://kdelec.com/category-sensor) — 148 listings (family: Controls, Tools & Accessories)
+- [grounding material](https://kdelec.com/category-grounding-material) — 133 listings (family: Grounding & Insulation)
+- [Switch Series](https://kdelec.com/category-switch-series) — 107 listings (family: Switchgear & Protection)
+- [electric power fittings](https://kdelec.com/category-electric-power-fittings) — 105 listings (family: Clamps & Line Hardware)
+- [Terminal block](https://kdelec.com/category-terminal-block) — 72 listings (family: Terminals & Connection)
+- [insulated terminal](https://kdelec.com/category-insulated-terminal) — 69 listings (family: Terminals & Connection)
+- [temperature controller](https://kdelec.com/category-temperature-controller) — 63 listings (family: Controls, Tools & Accessories)
+- [insulated piercing clamp](https://kdelec.com/category-insulated-piercing-clamp) — 60 listings (family: Clamps & Line Hardware)
+- [ceramic insulator](https://kdelec.com/category-ceramic-insulator) — 59 listings (family: Grounding & Insulation)
+- [strain clamp](https://kdelec.com/category-strain-clamp) — 43 listings (family: Clamps & Line Hardware)
+- [time relay](https://kdelec.com/category-time-relay) — 43 listings (family: Controls, Tools & Accessories)
 - [Copper and aluminum terminal](https://kdelec.com/category-copper-and-aluminum-terminal) — 36 listings (family: Terminals & Connection)
 - [parallel groove clamp](https://kdelec.com/category-parallel-groove-clamp) — 36 listings (family: Clamps & Line Hardware)
 - [Anchor clamp](https://kdelec.com/category-anchor-clamp) — 34 listings (family: Clamps & Line Hardware)
 - [Copper terminal](https://kdelec.com/category-copper-terminal) — 33 listings (family: Terminals & Connection)
+- [drop-out fuse](https://kdelec.com/category-drop-out-fuse) — 32 listings (family: Grounding & Insulation)
 - [suspension clamp](https://kdelec.com/category-suspension-clamp) — 32 listings (family: Clamps & Line Hardware)
+- [Timer](https://kdelec.com/category-timer) — 31 listings (family: Controls, Tools & Accessories)
+- [cable accessory](https://kdelec.com/category-cable-accessory) — 31 listings (family: Controls, Tools & Accessories)
+- [fuse](https://kdelec.com/category-fuse) — 30 listings (family: Switchgear & Protection)
 - [equipment cable clamp](https://kdelec.com/category-equipment-cable-clamp) — 27 listings (family: Clamps & Line Hardware)
+- [Distribution box](https://kdelec.com/category-distribution-box) — 24 listings (family: Switchgear & Protection)
+- [industrial plug](https://kdelec.com/category-industrial-plug) — 24 listings (family: Controls, Tools & Accessories)
+- [Composite Insulator](https://kdelec.com/category-composite-insulator) — 21 listings (family: Grounding & Insulation)
+- [contactor](https://kdelec.com/category-contactor) — 21 listings (family: Switchgear & Protection)
+- [counter](https://kdelec.com/category-counter) — 21 listings (family: Controls, Tools & Accessories)
+- [motor protector](https://kdelec.com/category-motor-protector) — 21 listings (family: Switchgear & Protection)
+- [Warning light](https://kdelec.com/category-warning-light) — 20 listings (family: Controls, Tools & Accessories)
+- [isolating switch](https://kdelec.com/category-isolating-switch) — 18 listings (family: Switchgear & Protection)
 - [Bare terminal](https://kdelec.com/category-bare-terminal) — 16 listings (family: Terminals & Connection)
+- [Resin insulator](https://kdelec.com/category-resin-insulator) — 15 listings (family: Grounding & Insulation)
+- [crimping tool](https://kdelec.com/category-crimping-tool) — 15 listings (family: Controls, Tools & Accessories)
 - [New energy terminal](https://kdelec.com/category-new-energy-terminal) — 14 listings (family: Terminals & Connection)
+- [liquid level controller](https://kdelec.com/category-liquid-level-controller) — 13 listings (family: Controls, Tools & Accessories)
 - [Aluminum terminal](https://kdelec.com/category-aluminum-terminal) — 12 listings (family: Terminals & Connection)
+- [knife switch](https://kdelec.com/category-knife-switch) — 11 listings (family: Switchgear & Protection)
+- [light control switch](https://kdelec.com/category-light-control-switch) — 9 listings (family: Controls, Tools & Accessories)
+- [Lightning arrester](https://kdelec.com/category-lightning-arrester) — 6 listings (family: Grounding & Insulation)
+- [solid state relay](https://kdelec.com/category-solid-state-relay) — 5 listings (family: Switchgear & Protection)
 
 ### What a product page contains
 - One `<h1>` with the product title, a stable Product ID / SKU (`sku` in JSON-LD),
