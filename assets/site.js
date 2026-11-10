@@ -62,17 +62,32 @@
   /* ------------------------------------------------------------ mega menu */
   const megaBtn = $('#mega-toggle');
   const mega = $('#mega');
+  const megaWrap = megaBtn?.parentElement;
+  let megaTimer;
   function setMega(open) {
     if (!mega || !megaBtn) return;
     mega.hidden = !open;
     megaBtn.setAttribute('aria-expanded', String(open));
   }
-  megaBtn?.addEventListener('click', e => { e.stopPropagation(); setMega(mega.hidden); });
-  megaBtn?.parentElement?.addEventListener('mouseenter', () => {
-    if (matchMedia('(hover: hover) and (min-width: 961px)').matches) setMega(true);
+  function openMega() { clearTimeout(megaTimer); setMega(true); }
+  function closeMegaSoon() {
+    clearTimeout(megaTimer);
+    // 鼠标从导航移到下拉时可能短暂经过两者之间：留 260ms 过渡窗口，
+    // 一旦进入菜单就取消关闭，避免「鼠标往下拉菜单就没了」。
+    megaTimer = setTimeout(() => setMega(false), 260);
+  }
+  const canHover = () => matchMedia('(hover: hover) and (min-width: 961px)').matches;
+  megaBtn?.addEventListener('click', e => {
+    e.stopPropagation();
+    clearTimeout(megaTimer);
+    setMega(mega.hidden);
   });
-  megaBtn?.parentElement?.addEventListener('mouseleave', () => setMega(false));
-  mega?.addEventListener('click', () => setMega(false));
+  megaWrap?.addEventListener('mouseenter', () => { if (canHover()) openMega(); });
+  megaWrap?.addEventListener('mouseleave', closeMegaSoon);
+  mega?.addEventListener('mouseenter', openMega);
+  mega?.addEventListener('mouseleave', closeMegaSoon);
+  // 只有点到真正的链接才收起菜单；点滚动条 / 空白处不应误关。
+  mega?.addEventListener('click', e => { if (e.target.closest('a')) setMega(false); });
   document.addEventListener('click', e => {
     if (mega && !mega.hidden && !e.target.closest('.mega-wrap')) setMega(false);
   });
